@@ -22,8 +22,10 @@ return new class extends Migration
             $table->string('status')->default('active');
             $table->string('tanggal-lahir')->nullable();
             $table->smallInteger('no_telp')->nullable();
+            $table->integer('score')->default(100);
             $table->foreignIdFor(Jurusan::class);
             $table->foreignIdFor(Kelas::class);
+            $table->rememberToken();
             $table->timestamps();
         });
     }

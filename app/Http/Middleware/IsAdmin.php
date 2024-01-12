@@ -17,10 +17,10 @@ class IsAdmin
     public function handle(Request $request, Closure $next): Response
     {
 
-        if(Auth::guard('admins')->check()){
+        if(Auth::guard('admin')->check()){
             return $next($request);
         }
-        else if(Auth::guard('users')->check()){
+        else if(Auth::guard('siswa')->check()){
             return redirect()->route('dashboard');
         }
         abort(403);

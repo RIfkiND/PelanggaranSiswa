@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('jurusans', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->integer('jumlah_siswa')->nullable();
             $table->timestamps();
         });
     }

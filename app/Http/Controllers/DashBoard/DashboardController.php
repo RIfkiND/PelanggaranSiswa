@@ -17,7 +17,7 @@ class DashboardController extends Controller
     {
         if (Auth::guard('siswa')->check()) {
             $user = Auth::guard('siswa');
-            return view('Dashboard');
+            return view('Dasboard.Table');
         }
         return redirect()->route('LoginView')->withErrors('U need to login');
     }

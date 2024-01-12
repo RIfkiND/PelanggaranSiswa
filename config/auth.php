@@ -44,7 +44,7 @@ return [
             'driver' => 'session',
             'provider'=>'siswa',
         ],
-        'admins'=>[
+        'admin'=>[
             'driver'=>'session',
             'provider'=>'admins',
         ],

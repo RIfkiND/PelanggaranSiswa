@@ -10,4 +10,6 @@ Route::prefix('Auth')->group(function(){
     Route::get('/Register',[RegisterController::class,'RegisterView'])->name('RegisterView');
     Route::post('/login',[LoginController::class,'Login'])->name('Login');
     Route::post('/Register',[RegisterController::class,'Store'])->name('Register');
+    Route::post('/logoute',[LogoutController::class,'Logout'])->name('logout');
 });
+

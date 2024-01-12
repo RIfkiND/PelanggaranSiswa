@@ -9,6 +9,12 @@ class Pelanggaran extends Model
 {
     use HasFactory;
 
+    protected $fillable=[
+        'name',
+        'pelanggaran_score',
+        'category_id'
+    ];
+
     public function category(){
         $this->belongsTo(Category::class);
     }

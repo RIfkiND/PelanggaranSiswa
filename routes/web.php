@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashBoard\DashboardController;
-use App\Http\Controllers\CheckController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +14,8 @@ use App\Http\Controllers\CheckController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('/dashboard',[DashboardController::class,'Das'])->name('Dashboard');
 
 
 require __DIR__.'/Auth/UserAuth.php';
+require __DIR__.'/Auth/AdminAuth.php';
