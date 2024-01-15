@@ -12,22 +12,31 @@ class PermissionSeeder extends Seeder
      */
     public function run(): void
     {
+        //admin only
         Permission::create([
-            'name'=>'manage users',
+            'name' => 'delete-pealanggaran',
             'guard_name'=>'admins',
         ]);
 
-
+        Permission::create([
+            'name'=> 'add-role',
+            'guard_name'=> 'admins',
+        ]);
 
         Permission::create([
-            'name'=>'view dashboard',
+            'name'=>'manage-siswa',
+            'guard_name'=>'admins',
+        ]);
+
+        //khusus pks
+        Permission::create([
+            'name'=>'view-dashboard',
             'guard_name'=>'siswa'
         ]);
 
         Permission::create([
             'name'=>'beri_hukuman',
-            'guard_name'=>'siswa'
+            'guard_name'=>'siswa',
         ]);
-
     }
 }

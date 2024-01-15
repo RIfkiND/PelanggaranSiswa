@@ -7,3 +7,7 @@ use App\Http\Controllers\Admin\Dashboard\DashboardController;
 
 Route::get('Admin/Dashboard',[DashboardController::class,'AdminDashboard'])->name('AdminDashboard')->middleware('IsAdmin');
 
+Route::prefix('Admin')->group(function(){
+    Route::get('/login',[AdminLoginController::class,'Adminloginview'])->name('admin.login');
+    Route::post('/logout',[AdminLogoutController::class,'AdminLogout'])->name('admin.logout');
+});

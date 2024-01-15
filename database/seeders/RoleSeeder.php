@@ -17,7 +17,6 @@ class RoleSeeder extends Seeder
             'name' => 'admin',
             'guard_name' => 'admins',
         ]);
-
         // Create role for regular users with 'web' guard
 
         //Role::create([

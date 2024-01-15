@@ -1,8 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\DashBoard\DashboardController;
-
 
 /*
 |--------------------------------------------------------------------------
@@ -14,8 +12,12 @@ use App\Http\Controllers\DashBoard\DashboardController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::get('/dashboard',[DashboardController::class,'Das'])->name('Dashboard');
+
+Route::get('/', function(){
+    return view('Admin.Dashboard.Table');
+})->name('admin.table');
 
 
 require __DIR__.'/Auth/UserAuth.php';
 require __DIR__.'/Auth/AdminAuth.php';
+require __DIR__.'/Dashboard/Admin.php';

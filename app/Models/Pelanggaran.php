@@ -9,8 +9,12 @@ class Pelanggaran extends Model
 {
     use HasFactory;
 
+
+    protected $table= 'pelanggarans';
+
     protected $fillable=[
         'name',
+        'alsan',
         'pelanggaran_score',
         'category_id'
     ];

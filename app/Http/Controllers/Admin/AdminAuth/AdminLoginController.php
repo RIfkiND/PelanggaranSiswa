@@ -7,6 +7,15 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 class AdminLoginController extends Controller
 {
+
+    public function __construct(){
+        $this->middleware('guest')->except([
+            'logout' ,'dashboard'
+        ]);
+    }
+    public function Adminloginview(){
+        return view('Admin.AdminAuth.login');
+    }
     public function adminlogin(Request $request){
 
         $credentials = $request->validate([

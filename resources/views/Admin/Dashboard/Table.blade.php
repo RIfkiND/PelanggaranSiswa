@@ -1,4 +1,4 @@
-@extends('Dashboard')
+@extends('Admin.AdminDashboard')
 
 @section('content')
 <table class="min-w-full">

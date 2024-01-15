@@ -7,11 +7,16 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 class AdminLogoutController extends Controller
 {
+    /**
+     * Logout logic
+     *
+     * @param Request $request
+     *
+     */
     public function AdminLogout(Request $request){
         Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-
-        return to_route('LoginView')->with('succes','You Have Logout');
+        return redirect()->route('admin.login')->with('succes','You Have Logout');
     }
 }
