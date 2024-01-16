@@ -1,0 +1,8 @@
+langkah-langkah:
+1.composer update
+2.ganti .env.example copas dan rename jadi env
+3.jalankan npm install
+
+done 😙
+optional =
+"php artisan migrate"
