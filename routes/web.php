@@ -13,9 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function(){
-    return view('Admin.Dashboard.Table');
-})->name('admin.table');
+
 
 
 require __DIR__.'/Auth/UserAuth.php';

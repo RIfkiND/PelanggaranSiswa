@@ -21,7 +21,7 @@ class IsAdmin
             return $next($request);
         }
         else if(Auth::guard('siswa')->check()){
-            return redirect()->route('dashboard');
+            abort(403);
         }
         abort(403);
     }

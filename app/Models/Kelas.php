@@ -16,10 +16,10 @@ class Kelas extends Model
     ];
 
     public function jurusan(){
-        $this->belongsTo(Jurusan::class);
+      return  $this->belongsTo(Jurusan::class);
     }
 
     public function siswa(){
-        $this->hasMany(Siswa::class);
+        return $this->hasMany(Siswa::class);
     }
 }

@@ -8,12 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class Category extends Model
 {
     use HasFactory;
+
+
+    
     protected $fillable=[
         'name'
-        
+
     ];
 
     public function pelangggaran(){
-        $this->hasMany(Pelanggaran::class);
+        return $this->hasMany(Pelanggaran::class);
     }
 }

@@ -6,21 +6,6 @@
                     stroke-linecap="round" stroke-linejoin="round"></path>
             </svg>
         </button>
-
-        <div class="relative mx-4 lg:mx-0">
-            <span class="absolute inset-y-0 left-0 flex items-center pl-3">
-                <svg class="w-5 h-5 text-gray-500" viewBox="0 0 24 24" fill="none">
-                    <path
-                        d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                    </path>
-                </svg>
-            </span>
-
-            <input class=" w-48 pl-10 pr-4  form-input sm:w-64 focus:border-indigo-600"
-                type="text" placeholder="Search">
-        </div>
     </div>
 
     <div class="flex items-center">
@@ -60,9 +45,7 @@
         <div x-data="{ dropdownOpen: false }" class="relative">
             <button @click="dropdownOpen = ! dropdownOpen"
                 class="relative block w-8 h-8 overflow-hidden rounded-full shadow focus:outline-none">
-                <img class="object-cover w-full h-full"
-                    src="https://images.unsplash.com/photo-1528892952291-009c663ce843?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=296&amp;q=80"
-                    alt="Your avatar">
+                <svg class="object-cover w-full h-full"   alt="Your avatar" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M12 2a5 5 0 1 0 5 5 5 5 0 0 0-5-5zm0 8a3 3 0 1 1 3-3 3 3 0 0 1-3 3zm9 11v-1a7 7 0 0 0-7-7h-4a7 7 0 0 0-7 7v1h2v-1a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5v1z"></path></svg>
             </button>
 
             <div x-show="dropdownOpen" @click="dropdownOpen = false"
@@ -73,10 +56,11 @@
                 style="display: none;">
                 <a href="#"
                     class="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-600 hover:text-white">Profile</a>
-                <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                <a href="{{ route('admin.logout') }}" onclick="event.preventDefault();
                 document.getElementById('logout-form').submit();"
                     class="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-600 hover:text-white">Logout
-                <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                <form id="logout-form" action="{{ route('admin.logout') }}" method="POST">
+                    @csrf
                     </form></a>
             </div>
         </div>

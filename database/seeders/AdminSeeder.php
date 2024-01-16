@@ -17,7 +17,7 @@ class AdminSeeder extends Seeder
             'name'=>'adminsmk123',
             'email' =>'adminsmk@gmail.com',
             'email_verified_at'=> now(),
-            'password'=> Hash::make('AdminSmk1_ciamis'),
+            'password'=> Hash::make('Test1234'),
         ]);
     }
 }

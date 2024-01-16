@@ -5,11 +5,11 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\LogoutController;
 
 
-Route::prefix('Auth')->group(function(){
-    Route::get('/Login',[LoginController::class,'LoginVIew'])->name('LoginView');
-    Route::get('/Register',[RegisterController::class,'RegisterView'])->name('RegisterView');
-    Route::post('/login',[LoginController::class,'Login'])->name('Login');
-    Route::post('/Register',[RegisterController::class,'Store'])->name('Register');
-    Route::post('/logoute',[LogoutController::class,'Logout'])->name('logout');
-});
+//Route::prefix('Auth')->group(function(){
+    //Route::get('/Login',[LoginController::class,'LoginVIew'])->name('LoginView');
+    //Route::get('/Register',[RegisterController::class,'RegisterView'])->name('RegisterView');
+    //Route::post('/login',[LoginController::class,'Login'])->name('Login');
+    //Route::post('/Register',[RegisterController::class,'Store'])->name('Register');
+   // Route::post('/logout',[LogoutController::class,'Logout'])->name('logout');
+//});
 

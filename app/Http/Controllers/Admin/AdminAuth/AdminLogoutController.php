@@ -14,9 +14,9 @@ class AdminLogoutController extends Controller
      *
      */
     public function AdminLogout(Request $request){
-        Auth::logout();
+        Auth::guard('admin')->logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-        return redirect()->route('admin.login')->with('succes','You Have Logout');
+        return redirect()->route('admin.login')->withSucces('You Have Logout');
     }
 }
