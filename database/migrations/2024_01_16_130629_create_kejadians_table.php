@@ -16,7 +16,7 @@ return new class extends Migration
     {
         Schema::create('kejadians', function (Blueprint $table) {
             $table->id();
-            $table->dateTime('Waktu')->default(now());
+            $table->foreignIdFor(Siswa::class);
             $table->foreignIdFor(Pelanggaran::class);
             $table->foreignIdFor(Category::class);
             $table->timestamps();

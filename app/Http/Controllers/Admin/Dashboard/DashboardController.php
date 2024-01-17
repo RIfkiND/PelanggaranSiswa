@@ -27,7 +27,7 @@ class DashboardController extends Controller
 
         return view('Admin.Dashboard.main.MainDashboard', compact('siswas', 'jurusans', 'kelass','charts','charts2'));
     }
-    abort(403);
+
 }
 
     /**

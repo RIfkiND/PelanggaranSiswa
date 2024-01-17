@@ -27,9 +27,9 @@ class Siswa extends Authenticatable
         'no_telp',
         'tanggal_lahir',
         'image',
-        'score',
-        'jurusan_id',
-        'kelas_id'
+        'score_pelanggaran',
+        'jurusan',
+        'kelas'
     ];
 
     /**
@@ -52,13 +52,12 @@ class Siswa extends Authenticatable
         'password' => 'hashed',
     ];
 
-    public function kelas()
-    {
-        return $this->belongsTo(Kelas::class);
+
+    public function kelas(){
+        return $this->belongsToMany(Kelas::class);
     }
 
-    public function jurusan()
-    {
+    public function jurusan(){
         return $this->belongsTo(Jurusan::class);
     }
 

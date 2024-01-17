@@ -15,27 +15,25 @@ class SiswaSeeder extends Seeder
      */
     public function run(): void
     {
-
-        // You may want to adjust the data according to your needs
-        $jurusan = Jurusan::first();
-        $kelas = Kelas::first();
-
-        // Insert sample data into the siswas table
-        DB::table('siswas')->insert([
+        $siswas = [
             [
                 'name' => 'John Doe',
                 'nis' => '123456',
-                'image' => 'sample_image.jpg',
-                'tanggal_lahir' => '1990-01-01',
+                'status' => 'active',
+                'tanggal-lahir' => '2000-01-01',
                 'no_telp' => 123456789,
                 'score_pelanggaran' => 0,
-                'jurusan_id' => $jurusan->id,
-                'kelas_id' => $kelas->id,
+                'jurusan' => 'Science',
+                'kelas' => 'A',
+                'remember_token' => null,
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
-            // Add more entries as needed
-        ]);
+            // Add more data as needed
+        ];
+
+        // Insert data into the 'siswas' table
+        DB::table('siswas')->insert($siswas);
 
     }
 }

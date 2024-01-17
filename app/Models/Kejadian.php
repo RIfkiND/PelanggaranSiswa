@@ -10,7 +10,7 @@ class Kejadian extends Model
     use HasFactory;
 
     protected $fillable=[
-        'Waktu',
+        'siswa_id',
         'pelanggaran_id',
         'category_id'
     ];
@@ -23,5 +23,5 @@ class Kejadian extends Model
         return $this->belongsTo(Pelanggaran::class);
     }
 
-  
+
 }

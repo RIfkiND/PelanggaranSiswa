@@ -17,11 +17,9 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('nis');
-            $table->string('image');
             $table->string('status')->default('active');
             $table->string('tanggal-lahir')->nullable();
             $table->smallInteger('no_telp')->nullable();
-            $table->integer('score_pelanggaran')->default(0);
             $table->foreignIdFor(Jurusan::class);
             $table->foreignIdFor(Kelas::class);
             $table->rememberToken();

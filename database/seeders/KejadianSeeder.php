@@ -15,14 +15,17 @@ class KejadianSeeder extends Seeder
      */
     public function run(): void
     {
-         for ($category=1; $category <=3; $category++) {
-         }
-         for ($kejadian=1; $kejadian <= 10 ; $kejadian++) {
-            $kejadian= Kejadian::create([
-                'Waktu' => now(),
-                'pelanggaran_id' => '1',
-                'category_id' => $category,
-            ]);
-         }
+        $kejadians = [
+            [
+                'pelanggaran_id' => Pelanggaran::inRandomOrder()->first()->id,
+                'category_id' => Category::inRandomOrder()->first()->id,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            // Add more data as needed
+        ];
+
+        // Insert data into the 'kejadians' table
+        Kejadian::insert($kejadians);
     }
 }
