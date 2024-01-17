@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Category;
+use App\Models\Kelas;
 use App\Models\Pelanggaran;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -21,6 +22,8 @@ return new class extends Migration
             $table->timestamps();
         });
     }
+
+
 
     /**
      * Reverse the migrations.

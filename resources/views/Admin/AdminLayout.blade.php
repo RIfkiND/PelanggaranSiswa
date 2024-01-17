@@ -22,7 +22,7 @@
                 class="fixed inset-y-0 left-0 z-30 w-64 overflow-y-auto transition duration-300 transform bg-gray-900 lg:translate-x-0 lg:static lg:inset-0">
 
                 <!--Side nav-->
-                @include('Admin.components.SideNav')
+                @include('Admin.components.include.SideNav')
                 <!--Side End--->
             </div>
             <div class="flex flex-col flex-1 overflow-hidden">

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin\Dashboard;
 
+use App\Charts\KelasChart;
 use App\Charts\WeaklyKejadianCharts;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -15,16 +16,16 @@ use App\Http\Controllers\Admin\Dashboard\Chart\KejadianChartController;
 class DashboardController extends Controller
 {
 
-    public function AdminDashboard(WeaklyKejadianCharts $chart)
+    public function AdminDashboard(WeaklyKejadianCharts $chart ,KelasChart $kelasChart)
 {
     if (Auth::guard('admin')->check()) {
-
+        $charts2 = $kelasChart->build();
         $charts= $chart->build();
         $siswas = Siswa::all();
         $jurusans = Jurusan::all();
         $kelass = Kelas::all();
 
-        return view('Admin.Dashboard.main.MainDashboard', compact('siswas', 'jurusans', 'kelass','charts'));
+        return view('Admin.Dashboard.main.MainDashboard', compact('siswas', 'jurusans', 'kelass','charts','charts2'));
     }
     abort(403);
 }
@@ -50,8 +51,12 @@ class DashboardController extends Controller
          */
     public function siswashow(){
 
-        $siswas = Siswa::withCount('pelanggaran')->get();
+        $siswas = Siswa::with('pelanggaran')->get();
 
-        return view('' ,compact('siswas'));
+        return view('Admin.Dashboard.Content.Siswa' ,compact('siswas'));
+    }
+
+    public function history(){
+        return view('Admin.Dashboard.Content.history');
     }
 }

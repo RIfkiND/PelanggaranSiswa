@@ -15,7 +15,8 @@ return new class extends Migration
         Schema::create('kelas', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->smallInteger('jumlah');
+            $table->integer('kelas');
+            $table->smallInteger('jumlah')->nullable();
             $table->foreignIdFor(Jurusan::class);
             $table->timestamps();
         });

@@ -18,4 +18,10 @@ class Kejadian extends Model
     public function siswa(){
         return $this->belongsTo(Siswa::class);
     }
+
+    public function pelanggaran(){
+        return $this->belongsTo(Pelanggaran::class);
+    }
+
+  
 }

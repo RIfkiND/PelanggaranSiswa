@@ -74,6 +74,22 @@
     </div>
 </div>
 
+<div class="container mt-10 bg-white rounded-sm">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-body">
+                    <div id="app">
+                        {!! $charts2->container() !!}
+                    </div>
+                    <script src="{{ $charts2->cdn() }}"></script>
+                    {!! $charts2->script() !!}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 
  @endsection

@@ -11,6 +11,7 @@ class Kelas extends Model
 
     protected $fillable=[
         'name',
+        'kelas',
         'jumlah',
         'jurusan_id'
     ];
@@ -21,5 +22,9 @@ class Kelas extends Model
 
     public function siswa(){
         return $this->hasMany(Siswa::class);
+    }
+
+    public function kejadian(){
+        return $this->hasMany(Kejadian::class);
     }
 }
