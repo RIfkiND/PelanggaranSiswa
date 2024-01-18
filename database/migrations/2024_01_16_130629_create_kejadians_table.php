@@ -3,6 +3,7 @@
 use App\Models\Category;
 use App\Models\Kelas;
 use App\Models\Pelanggaran;
+use App\Models\Siswa;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -16,6 +17,7 @@ return new class extends Migration
     {
         Schema::create('kejadians', function (Blueprint $table) {
             $table->id();
+            $table->string('alasan')->nullable();
             $table->foreignIdFor(Siswa::class);
             $table->foreignIdFor(Pelanggaran::class);
             $table->foreignIdFor(Category::class);

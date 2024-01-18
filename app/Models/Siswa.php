@@ -52,6 +52,21 @@ class Siswa extends Authenticatable
         'password' => 'hashed',
     ];
 
+    public function getTotalKejadianAttribute()
+    {
+        return $this->kejadians()->count();
+    }
+    public function getTotalPelanggaranScoreAttribute()
+    {
+        return $this->kejadians()
+            ->join('pelanggarans', 'kejadians.pelanggaran_id', '=', 'pelanggarans.id')
+            ->sum('pelanggarans.pelanggaran_score');
+    }
+
+    public function kejadians()
+    {
+        return $this->hasMany(Kejadian::class);
+    }
 
     public function kelas(){
         return $this->belongsToMany(Kelas::class);
@@ -64,9 +79,5 @@ class Siswa extends Authenticatable
     public function pelanggaran()
     {
         return $this->hasMany(Pelanggaran::class);
-    }
-
-    public function kejadian(){
-        return $this->hasMany(Kejadian::class);
     }
 }

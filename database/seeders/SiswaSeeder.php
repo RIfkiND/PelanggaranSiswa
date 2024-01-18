@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Jurusan;
 use App\Models\Kelas;
+use App\Models\Siswa;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -15,25 +16,21 @@ class SiswaSeeder extends Seeder
      */
     public function run(): void
     {
-        $siswas = [
-            [
-                'name' => 'John Doe',
-                'nis' => '123456',
-                'status' => 'active',
-                'tanggal-lahir' => '2000-01-01',
-                'no_telp' => 123456789,
-                'score_pelanggaran' => 0,
-                'jurusan' => 'Science',
-                'kelas' => 'A',
-                'remember_token' => null,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            // Add more data as needed
-        ];
+      // Assuming you have existing Jurusan and Kelas records
+      $jurusanId = Jurusan::first()->id;
+      $kelasId = Kelas::first()->id;
 
-        // Insert data into the 'siswas' table
-        DB::table('siswas')->insert($siswas);
+      Siswa::create([
+          'name' => 'John Doe',
+          'nis' => '123456',
+          'status' => 'active',
+          'tanggal_lahir' => '1990-01-01',
+          'no_telp' => 123456789,
+          'jurusan_id' => $jurusanId,
+          'kelas_id' => $kelasId,
+      ]);
+
+
 
     }
 }

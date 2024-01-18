@@ -14,7 +14,7 @@ class Pelanggaran extends Model
 
     protected $fillable=[
         'name',
-        'alasan',
+        'penjelasan',
         'pelanggaran_score',
         'category_id'
     ];

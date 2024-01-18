@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Jurusan;
+use App\Models\Siswa;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -16,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->integer('kelas');
-            $table->smallInteger('jumlah')->nullable();
+            $table->foreignIdFor(Siswa::class);
             $table->foreignIdFor(Jurusan::class);
             $table->timestamps();
         });

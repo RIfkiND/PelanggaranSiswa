@@ -23,7 +23,7 @@ class DatabaseSeeder extends Seeder
         $this->call(PermissionSeeder::class);
         $this->call(CategorySeeder::class);
         $this->call(JurusanSeeder::class);
+       // $this->call(SiswaSeeder::class);
         //$this->call(KejadianSeeder::class);
-        //$this->call(SiswaSeeder::class);
     }
 }

@@ -27,14 +27,14 @@ class PelanggaranController extends Controller
 
         $request->validate([
             'name' => 'required|string',
-            'alasan' => 'required|string',
+            'penjelasan' => 'required|string',
             'pelanggaran_score' => 'required|integer',
             'category_id' => 'required|exists:categories,id'
         ]);
 
         Pelanggaran::create([
             'name' => $request->input('name'),
-            'alasan' => $request->input('alasan'),
+            'penjelasan' => $request->input('penjelasan'),
             'pelanggaran_score' => $request->input('pelanggaran_score'),
             'category_id' => $request->input('category_id'),
         ]);
