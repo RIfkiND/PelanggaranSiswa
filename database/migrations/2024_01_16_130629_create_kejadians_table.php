@@ -3,6 +3,7 @@
 use App\Models\Category;
 use App\Models\Kelas;
 use App\Models\Pelanggaran;
+use App\Models\Siswa;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;

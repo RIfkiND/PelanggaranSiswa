@@ -15,6 +15,9 @@ class SiswaSeeder extends Seeder
      */
     public function run(): void
     {
+        $jurusan = Jurusan::first();
+
+        $kelas = Kelas::first();
         $siswas = [
             [
                 'name' => 'John Doe',
@@ -22,9 +25,8 @@ class SiswaSeeder extends Seeder
                 'status' => 'active',
                 'tanggal-lahir' => '2000-01-01',
                 'no_telp' => 123456789,
-                'score_pelanggaran' => 0,
-                'jurusan' => 'Science',
-                'kelas' => 'A',
+                'jurusan_id' => $jurusan->id,
+                'kelas_id' => $kelas->id,
                 'remember_token' => null,
                 'created_at' => now(),
                 'updated_at' => now(),

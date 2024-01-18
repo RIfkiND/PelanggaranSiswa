@@ -29,7 +29,7 @@
 
                 </div>
                 <div class="my-4">
-                    <textarea placeholder="alasan*" id="alasan" name="alasan"
+                    <textarea placeholder="Penjelasan*" id="penjelasan" name="penjelasan"
                         class="w-full h-32 bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"></textarea>
                 </div>
                 <div class="my-2 w-1/2 lg:w-1/4">

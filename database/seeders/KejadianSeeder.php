@@ -7,6 +7,7 @@ use Illuminate\Database\Seeder;
 use App\Models\Kejadian;
 use App\Models\Pelanggaran;
 use App\Models\Category;
+use App\Models\Siswa;
 
 class KejadianSeeder extends Seeder
 {
@@ -17,6 +18,7 @@ class KejadianSeeder extends Seeder
     {
         $kejadians = [
             [
+                'siswa_id' =>Siswa::inRandomOrder()->first()->id,
                 'pelanggaran_id' => Pelanggaran::inRandomOrder()->first()->id,
                 'category_id' => Category::inRandomOrder()->first()->id,
                 'created_at' => now(),
