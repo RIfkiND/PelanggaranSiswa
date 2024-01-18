@@ -19,6 +19,13 @@ class PelanggaranController extends Controller
         return view('Admin.components.Api.create',compact('categories'));
     }
 
+    // public function edit(string $id){
+
+    //     $pelanggarans = Pelanggaran::findOrFail($id);
+
+    //     return view('Admin.components.Api.edit' ,compact('pelanggarans'));
+    // }
+
     /**
      * Store a newly created resource in storage.
      */

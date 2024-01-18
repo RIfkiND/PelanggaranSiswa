@@ -9,6 +9,7 @@ use App\Models\Pelanggaran;
 use App\Models\Category;
 use App\Models\Siswa;
 
+
 class KejadianSeeder extends Seeder
 {
     /**
