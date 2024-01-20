@@ -21,13 +21,13 @@ class SiswaSeeder extends Seeder
       $kelasId = Kelas::first()->id;
 
       Siswa::create([
-          'name' => 'John Doe',
+          'name' => 'nepal',
           'nis' => '123456',
           'status' => 'active',
           'tanggal_lahir' => '1990-01-01',
           'no_telp' => 123456789,
-          'jurusan_id' => $jurusanId,
-          'kelas_id' => $kelasId,
+          'jurusan_id' => 2,
+          'kelas_id' => 2,
       ]);
 
 

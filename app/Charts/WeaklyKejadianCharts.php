@@ -19,32 +19,28 @@ class WeaklyKejadianCharts
     public function build(): \ArielMejiaDev\LarapexCharts\LineChart
     {
 
-       //ambil tanggal ter buat
+        //ambil tanggal terbuat
         $kejadians = Kejadian::select('created_at')->get();
 
-        //buat array kosong
-        $weeklyCounts = [];
+        //loop kejadian Ambil time menggunakan library Carbon PHP
+        $weeklyCounts = $kejadians->map(function ($kejadian) { //buat function untuk ambil kejadian
+            return Carbon::parse($kejadian->created_at)->weekOfYear;//ambil colum ceated_at dan gunakan library carbon jadikan week
+        })->countBy()->all();
 
-        //loop kejadian Ambil time mengunakan librart carbon php
-        foreach ($kejadians as $kejadian) {
-            $weekNumber = Carbon::parse($kejadian->created_at)->weekOfYear;
-            $weeklyCounts[$weekNumber] = isset($weeklyCounts[$weekNumber]) ? $weeklyCounts[$weekNumber] + 1 : 1;
-        }
+        ksort($weeklyCounts);
 
-        //ambil Total Kejadian
+        //ambil Total Kejadian kembalikan sebagai array
         $chartData = [
             'Total' => array_values($weeklyCounts),
         ];
 
-        
-        $weekNumbers = array_keys($weeklyCounts);
         $xAxisLabels = array_map(function ($weekNumber) {
             return 'minggu ' . $weekNumber;
-        }, $weekNumbers);
-
+        }, array_keys($weeklyCounts));
+        //show
         return $this->chart->lineChart()
             ->setTitle('Pelanggaran Per Minggu')
-            ->setSubtitle('Data Pleanggaran')
+            ->setSubtitle('Data Pelanggaran')
             ->addData('Total', $chartData['Total'])
             ->setXAxis($xAxisLabels);
     }

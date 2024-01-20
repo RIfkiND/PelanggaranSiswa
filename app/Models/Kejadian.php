@@ -11,6 +11,7 @@ class Kejadian extends Model
 
     protected $fillable=[
         'siswa_id',
+        'alasan',
         'pelanggaran_id',
         'category_id'
     ];

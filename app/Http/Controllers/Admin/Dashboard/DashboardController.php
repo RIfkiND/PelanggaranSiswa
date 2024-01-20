@@ -13,6 +13,8 @@ use App\Models\Category;
 use App\Models\Jurusan;
 use App\Models\Kelas;
 use App\Http\Controllers\Admin\Dashboard\Chart\KejadianChartController;
+use App\Models\Kejadian;
+
 class DashboardController extends Controller
 {
 
@@ -51,12 +53,15 @@ class DashboardController extends Controller
          */
     public function siswashow(){
 
-        $siswas = Siswa::with('pelanggaran')->get();
+        $siswas = Siswa::with(['kejadians' ,'kelas' ,'jurusan'])->paginate(12);
 
         return view('Admin.Dashboard.Content.Siswa' ,compact('siswas'));
     }
 
     public function history(){
-        return view('Admin.Dashboard.Content.history');
+
+        $historys = Kejadian::with(['siswa' ,'pelanggaran','category'])->paginate(10);
+
+        return view('Admin.Dashboard.Content.history',compact('historys'));
     }
 }

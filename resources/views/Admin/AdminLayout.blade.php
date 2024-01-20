@@ -35,6 +35,8 @@
                                     stroke-linecap="round" stroke-linejoin="round"></path>
                             </svg>
                         </button>
+                        <h5 class="pl-10 font-bold text-xl">{{ auth('admin')->user()->name}}</h5>
+
                     </div>
                     <div class="flex items-center">
                         <div x-data="{ notificationOpen: false }" class="relative">
@@ -49,7 +51,6 @@
                                     </path>
                                 </svg>
                             </button>
-
                             <div x-show="notificationOpen" @click="notificationOpen = false"
                                 class="fixed inset-0 z-10 w-full h-full" style="display: none;"></div>
 
@@ -84,7 +85,6 @@
 
                             <div x-show="dropdownOpen" @click="dropdownOpen = false"
                                 class="fixed inset-0 z-10 w-full h-full" style="display: none;"></div>
-
                             <div x-show="dropdownOpen"
                                 class="absolute right-0 z-10 w-48 mt-2 overflow-hidden bg-white rounded-md shadow-xl"
                                 style="display: none;">

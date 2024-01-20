@@ -69,15 +69,12 @@ class Siswa extends Authenticatable
     }
 
     public function kelas(){
-        return $this->belongsToMany(Kelas::class);
+        return $this->belongsTo(Kelas::class);
     }
 
     public function jurusan(){
         return $this->belongsTo(Jurusan::class);
     }
 
-    public function pelanggaran()
-    {
-        return $this->hasMany(Pelanggaran::class);
-    }
+
 }

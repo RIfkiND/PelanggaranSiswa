@@ -17,8 +17,8 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('nis');
-            $table->boolean('status')->default('active');
-            $table->string('tanggal-lahir')->nullable();
+            $table->string('status')->default('active');
+            $table->string('tanggal_lahir')->nullable();
             $table->Integer('no_telp')->nullable();
             $table->foreignIdFor(Jurusan::class);
             $table->foreignIdFor(Kelas::class);

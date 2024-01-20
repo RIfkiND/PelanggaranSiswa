@@ -1,7 +1,8 @@
 <?php
-use App\Http\Controllers\Admin\Dashboard\PelanggaranController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\Dashboard\PelanggaranController;
 use App\Http\Controllers\Admin\Dashboard\DashboardController;
+use App\Http\Controllers\Api\SearchController;
 
 
 Route::controller(DashboardController::class)->prefix('/Admin/Dashboard')->group(function(){
@@ -18,3 +19,5 @@ Route::resource('/Admin/do',PelanggaranController::class)->names([
     'update'=> 'edit.pelanggaran',//put
     'destroy'=>'delete.pelanggaran',//delete
 ]);
+
+Route::get('/search/siswa',[SearchController::class,'search'])->name('search');

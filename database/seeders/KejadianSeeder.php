@@ -17,13 +17,18 @@ class KejadianSeeder extends Seeder
      */
     public function run(): void
     {
+        $categoryids = Category::first();
+        $pelanggaranid = Pelanggaran::first();
+        $siswaids = Siswa::first();
         $kejadians = [
             [
-                'siswa_id'=>Siswa::isRandomOrder()->first()->id,
-                'pelanggaran_id' => Pelanggaran::inRandomOrder()->first()->id,
-                'category_id' => Category::inRandomOrder()->first()->id,
-                'created_at' => now(),
-                'updated_at' => now(),
+                'siswa_id' => $siswaids->id,
+                'pelanggaran_id' => $pelanggaranid->id,
+                'category_id' => $categoryids->id,
+                'created_at' => now()->subWeeks(2),
+                'updated_at' => now()->subWeeks(2),
+
+
             ],
             // Add more data as needed
         ];
