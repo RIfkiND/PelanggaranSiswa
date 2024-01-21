@@ -1,6 +1,6 @@
 <?php
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Admin\Dashboard\PelanggaranController;
+use App\Http\Controllers\Admin\Dashboard\Resources\PelanggaranController;
 use App\Http\Controllers\Admin\Dashboard\DashboardController;
 use App\Http\Controllers\Api\SearchController;
 
@@ -9,6 +9,7 @@ Route::controller(DashboardController::class)->prefix('/Admin/Dashboard')->group
     Route::get('/list-pelanggaran' ,'list')->name('list.pelanggaran');
     Route::get('/siswa', 'siswashow')->name('list.siswa');
     Route::get('/histoy','history')->name('list.history');
+    Route::get('/table/all','table')->name('list.table');
 });
 //Route::get('/Admin/Dashboard/list-pelanggaran',[DashboardController::class,'list'])->name('list.pelanggaran');
 

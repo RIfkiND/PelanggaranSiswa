@@ -18,50 +18,58 @@ use App\Models\Kejadian;
 class DashboardController extends Controller
 {
 
-    public function AdminDashboard(WeaklyKejadianCharts $chart ,KelasChart $kelasChart)
-{
-    if (Auth::guard('admin')->check()) {
-        $charts2 = $kelasChart->build();
-        $charts= $chart->build();
-        $siswas = Siswa::all();
-        $jurusans = Jurusan::all();
-        $kelass = Kelas::all();
+    public function AdminDashboard(WeaklyKejadianCharts $chart, KelasChart $kelasChart)
+    {
+        if (Auth::guard('admin')->check()) {
+            $charts2 = $kelasChart->build();
+            $charts = $chart->build();
+            $siswas = Siswa::all();
+            $jurusans = Jurusan::all();
+            $kelass = Kelas::all();
 
-        return view('Admin.Dashboard.main.MainDashboard', compact('siswas', 'jurusans', 'kelass','charts','charts2'));
+            return view('Admin.Dashboard.main.MainDashboard', compact('siswas', 'jurusans', 'kelass', 'charts', 'charts2'));
+        }
     }
-
-}
 
     /**
      *  Tampilakn tiap pelanggaran
      *
      * @return
      */
-        public function list()
-        {
+    public function list()
+    {
 
-            $pelanggarans = Pelanggaran::with('category')->orderBy('category_id')->paginate(10);
+        $pelanggarans = Pelanggaran::with('category')->orderBy('category_id')->paginate(10);
 
-            return view('Admin.Dashboard.content.Listpelanggaran' ,compact('pelanggarans'));
-
-        }
-
-        /**
-         * Tampilakn tiap siswa
-         *
-         *
-         */
-    public function siswashow(){
-
-        $siswas = Siswa::with(['kejadians' ,'kelas' ,'jurusan'])->paginate(12);
-
-        return view('Admin.Dashboard.Content.Siswa' ,compact('siswas'));
+        $categories = Category::all();
+        return view('Admin.Dashboard.content.Listpelanggaran', compact('pelanggarans' ,'categories'));
     }
 
-    public function history(){
+    public function table(){
+        $kelass= Kelas::all();
+        $siswas = Siswa::all();
+        $jurusans= Jurusan::all();
 
-        $historys = Kejadian::with(['siswa' ,'pelanggaran','category'])->paginate(10);
+        return view('Admin.Dashboard.Content.table' ,compact('siswas', 'jurusans', 'kelass'));
+    }
+    /**
+     * Tampilakn tiap siswa
+     *
+     *
+     */
+    public function siswashow()
+    {
 
-        return view('Admin.Dashboard.Content.history',compact('historys'));
+        $siswas = Siswa::with(['kejadians', 'kelas', 'jurusan'])->paginate(12);
+
+        return view('Admin.Dashboard.Content.Siswa', compact('siswas'));
+    }
+
+    public function history()
+    {
+
+        $historys = Kejadian::with(['siswa', 'pelanggaran', 'category'])->paginate(10);
+
+        return view('Admin.Dashboard.Content.history', compact('historys'));
     }
 }

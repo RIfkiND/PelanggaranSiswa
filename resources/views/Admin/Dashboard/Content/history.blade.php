@@ -1,9 +1,10 @@
 @extends('Admin.AdminLayout')
 @section('content')
-
+<hr class="w-full h-1 my-8 bg-gray-600 border-0 rounded dark:bg-gray-700">
+<h2 class="font-bold text-2xl">History</h2>
+<hr class="w-full h-1 my-8 bg-gray-600 border-0 rounded dark:bg-gray-700">
 @forelse ($historys as $history )
-
-    <ol class="relative border-s dark:border-black">
+    <ol class="relative border-s dark:border-black bg-white">
         <li class="mb-10  ms-4">
             <div class="absolute w-3 h-3 bg-black rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
             <time class="mb-1 font-bold leading-none text-black   dark:text-black">{{ $history->created_at }}</time>

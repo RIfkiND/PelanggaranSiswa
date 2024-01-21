@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Dashboard;
+namespace App\Http\Controllers\Admin\Dashboard\Resources;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -8,6 +8,10 @@ use App\Models\Pelanggaran;
 use App\Models\Category;
 class PelanggaranController extends Controller
 {
+
+    public function __construct(){
+        $this->middleware('IsAdmin');
+    }
     /**
      * Display a listing of the resource.
      */
@@ -45,7 +49,7 @@ class PelanggaranController extends Controller
             'category_id' => $request->input('category_id'),
         ]);
 
-        return redirect()->route('list.pelanggaran')->with('success', 'Berhasil ditambah'); // Corrected the method name here
+        return redirect()->route('list.pelanggaran')->with('success', 'Has Been Added');
     }
 
 
@@ -62,7 +66,35 @@ class PelanggaranController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $request->validate([
+            'name' => 'sometimes|string',
+            'penjelasan' => 'sometimes|string',
+            'pelanggaran_score' => 'sometimes|integer',
+            'category_id' => 'sometimes|exists:categories,id',
+        ]);
+
+
+        $pelanggarans = Pelanggaran::findOrFail($id);
+
+        if ($request->has('name')) {
+            $pelanggarans->name = $request->input('name');
+        }
+
+        if ($request->has('penjelasan')) {
+            $pelanggarans->penjelasan = $request->input('penjelasan');
+        }
+
+        if ($request->has('pelanggaran_score')) {
+            $pelanggarans->pelanggaran_score = $request->input('pelanggaran_score');
+        }
+
+        if ($request->has('category_id')) {
+            $pelanggarans->category_id = $request->input('category_id');
+        }
+
+        $pelanggarans->save();
+
+        return to_route('list.pelanggaran')->with('success','Has been Updated');
     }
 
     /**
