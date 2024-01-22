@@ -25,8 +25,8 @@ class KejadianSeeder extends Seeder
                 'siswa_id' => $siswaids->id,
                 'pelanggaran_id' => $pelanggaranid->id,
                 'category_id' => $categoryids->id,
-                'created_at' => now()->subWeeks(2),
-                'updated_at' => now()->subWeeks(2),
+                'created_at' => now()->addWeek(2),
+                'updated_at' => now()->addWeek(2),
 
 
             ],

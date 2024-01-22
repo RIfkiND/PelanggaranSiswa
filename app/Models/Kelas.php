@@ -19,12 +19,9 @@ class Kelas extends Model
     public function jurusan(){
       return  $this->belongsTo(Jurusan::class);
     }
-    
+
     public function siswa(){
         return $this->hasMany(Siswa::class);
     }
 
-    public function kejadian(){
-        return $this->hasMany(Kejadian::class);
-    }
 }
