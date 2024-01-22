@@ -18,7 +18,7 @@ class JurusanSeeder extends Seeder
 
         DB::table('jurusans')->insert([
             [
-                'name' => 'Jurusan A',
+                'name' => 'Jurusan C',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],

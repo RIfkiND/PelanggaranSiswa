@@ -17,16 +17,16 @@ class KejadianSeeder extends Seeder
      */
     public function run(): void
     {
-        $categoryids = Category::first();
-        $pelanggaranid = Pelanggaran::first();
-        $siswaids = Siswa::first();
+        $categoryids = 1;
+        $pelanggaranid = 1;
+        $siswaids = 9;
         $kejadians = [
             [
-                'siswa_id' => $siswaids->id,
-                'pelanggaran_id' => $pelanggaranid->id,
-                'category_id' => $categoryids->id,
-                'created_at' => now()->addWeek(2),
-                'updated_at' => now()->addWeek(2),
+                'siswa_id' => $siswaids,
+                'pelanggaran_id' => $pelanggaranid,
+                'category_id' => $categoryids,
+                'created_at' => now(),
+                'updated_at' => now(),
 
 
             ],

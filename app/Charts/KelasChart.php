@@ -3,6 +3,8 @@
 namespace App\Charts;
 
 use ArielMejiaDev\LarapexCharts\LarapexChart;
+use App\models\Kejadian;
+use App\Models\Pelanggaran;
 
 class KelasChart
 {
@@ -15,10 +17,23 @@ class KelasChart
 
     public function build(): \ArielMejiaDev\LarapexCharts\PieChart
     {
+
+        // Ambil model
+        $perkelas = Kejadian::with('siswa')
+            ->get()
+            ->groupBy('siswa.kelas.kelas');// Siswa relation to Siswa -> kelas -> Interger Kelas
+
+        $totalPelanggaran = $perkelas->map->count();
+
+        // untuk vie chart
+        $chartData = $totalPelanggaran->values()->toArray();
+
+
+
         return $this->chart->pieChart()
             ->setTitle('Top Per angkatan')
             ->setSubtitle('Kelas')
-            ->addData([40, 50, 30])
-            ->setLabels(['Kelas 10', 'Kelas 11', 'Kelas 12']);
+            ->addData($chartData)
+            ->setLabels(['Kelas 10' ,'Kelas 11' ,'Kelas 12']);
     }
 }

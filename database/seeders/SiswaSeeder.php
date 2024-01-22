@@ -26,8 +26,8 @@ class SiswaSeeder extends Seeder
           'status' => 'active',
           'tanggal_lahir' => '1990-01-01',
           'no_telp' => 123456789,
-          'jurusan_id' => 1,
-          'kelas_id' => 1,
+          'jurusan_id' => 3,
+          'kelas_id' => 3,
       ]);
 
 

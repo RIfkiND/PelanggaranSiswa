@@ -22,11 +22,11 @@ class KelasSeeder extends Seeder
         // Insert sample data into the kelas table
         DB::table('kelas')->insert([
             [
-                'name' => 'X-PPLG',
-                'wali_kelas' => 'Pak aji',
-                'kelas' => 10,
+                'name' => '12-PPLG',
+                'wali_kelas' => 'Pak Nicky',
+                'kelas' => 12,
                 'jumlah' => 30,
-                'jurusan_id' => 2,
+                'jurusan_id' => 3,
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
