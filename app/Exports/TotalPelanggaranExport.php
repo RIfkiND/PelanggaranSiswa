@@ -11,7 +11,7 @@ class TotalPelanggaranExport implements FromView
     {
 
         return view('Import.Exceel.TotalKejadianExcel',[
-            'total' => Kejadian::all()
+            'total' => Kejadian::with(['siswa','pelanggaran','category' ])
         ]);
     }
 }

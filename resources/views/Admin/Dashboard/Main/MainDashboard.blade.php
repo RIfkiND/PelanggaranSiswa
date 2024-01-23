@@ -60,11 +60,12 @@
 <!-- Add this script tag to include ECharts -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/4.0.2/echarts-en.min.js" charset="utf-8"></script>
 
-<div class="container mt-10 bg-white rounded-sm">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-body">
+
+<div class="mt-10">
+    <div class="flex justify-center">
+        <div class="w-full md:w-1/2 px-4">
+            <div class="bg-white rounded-sm shadow-md">
+                <div class="p-4">
                     <div id="app">
                         {!! $charts->container() !!}
                     </div>
@@ -73,15 +74,11 @@
                 </div>
             </div>
         </div>
-    </div>
-</div>
 
-<div class="container mt-10 bg-white rounded-sm">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-body">
-                    <div id="app">
+        <div class="w-full md:w-1/2 px-4 mt-4 md:mt-0">
+            <div class="bg-white rounded-sm shadow-md">
+                <div class="p-4">
+                    <div id="app2">
                         {!! $charts2->container() !!}
                     </div>
                     <script src="{{ $charts2->cdn() }}"></script>
@@ -91,6 +88,9 @@
         </div>
     </div>
 </div>
+
+
+
 
 
 

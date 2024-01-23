@@ -9,7 +9,7 @@
 <div class="flex items-center justify-center mt-8">
     <div class="flex items-center">
         <img class="w-12 h-14" viewBox="0 0 512 512" fill="none"  src="{{ asset('Assets/Image/Logo Smk.png') }}">
-        <span class="mx-2 text-2xl font-semibold text-white">Dashboard</span>
+        <span class="mx-2 text-2xl font-semibold text-white font-mono">DASHBOARD</span>
     </div>
 </div>
 <!--TOP Nav END-->
@@ -39,7 +39,7 @@
             </path>
         </svg>
 
-        <span class="mx-3">Tables</span>
+        <span class="mx-3">Export</span>
     </a>
 
 

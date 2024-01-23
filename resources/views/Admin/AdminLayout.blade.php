@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     @vite('resources/css/app.css')
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
     <title>Pelanggaran Siswa</title>
 </head>
 
@@ -35,7 +37,7 @@
                                     stroke-linecap="round" stroke-linejoin="round"></path>
                             </svg>
                         </button>
-                        <h5 class="pl-10 font-bold text-xl">{{ auth('admin')->user()->name}}</h5>
+                        <h5 class="pl-10 font-bold text-xl">{{ auth('admin')->user()->name }}</h5>
 
                     </div>
                     <div class="flex items-center">
@@ -106,7 +108,7 @@
                 <!-- Header end-->
                 <main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-200">
                     <div class="container px-6 py-8 mx-auto">
-                        <h3 class="text-3xl font-medium text-gray-700">{{__("Dashboard")}}</h3>
+
 
                         <!-- Bagian Main--->
                         @yield('main')

@@ -18,7 +18,9 @@ class TotalPelanggaran
         return $this->chart->donutChart()
             ->setTitle('Top 3 scorers of the team.')
             ->setSubtitle('Season 2021.')
+            ->setLabels(['Player 7', 'Player 10', 'Player 9'])
             ->addData([20, 24, 30])
-            ->setLabels(['Player 7', 'Player 10', 'Player 9']);
+            ->setWidth(800) // Set width as per your requirements
+            ->setHeight(400);
     }
 }

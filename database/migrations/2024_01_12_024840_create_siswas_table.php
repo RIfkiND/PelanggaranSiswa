@@ -16,10 +16,13 @@ return new class extends Migration
         Schema::create('siswas', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('nis');
+            $table->integer('nis');
+            $table->string('password');
+            $table->string('image')->nullable();
             $table->string('status')->default('active');
             $table->string('tanggal_lahir')->nullable();
-            $table->Integer('no_telp')->nullable();
+            $table->string('gender');
+            $table->integer('no_telp')->nullable();
             $table->foreignIdFor(Jurusan::class);
             $table->foreignIdFor(Kelas::class);
             $table->rememberToken();

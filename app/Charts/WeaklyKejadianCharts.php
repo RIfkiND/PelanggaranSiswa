@@ -58,7 +58,9 @@ class WeaklyKejadianCharts
         ->setTitle('Pelanggaran Per Minggu')
         ->setSubtitle('Data Pelanggaran')
         ->addData('Total', $chartData['Total'])
-        ->setXAxis($xAxisLabels);
+        ->setXAxis($xAxisLabels)
+        ->setWidth(500) // Set width as per your requirements
+        ->setHeight(300);
 }
 
 }

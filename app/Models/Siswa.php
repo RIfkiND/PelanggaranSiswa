@@ -23,13 +23,15 @@ class Siswa extends Authenticatable
     protected $fillable = [
         'name',
         'nis',
+        'image',
+        'gender',
         'password',
         'no_telp',
         'tanggal_lahir',
         'image',
         'score_pelanggaran',
-        'jurusan',
-        'kelas'
+        'jurusan_id',
+        'kelas_id'
     ];
 
     /**
@@ -38,7 +40,7 @@ class Siswa extends Authenticatable
      * @var array<int, string>
      */
     protected $hidden = [
-        'nis',
+        'password',
         'remember_token',
     ];
 
