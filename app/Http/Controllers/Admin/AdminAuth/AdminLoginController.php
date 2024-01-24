@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Admin\AdminAuth;
 
 use App\Http\Controllers\Controller;
-use App\Providers\RouteServiceProvider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 class AdminLoginController extends Controller

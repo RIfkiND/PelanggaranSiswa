@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('image')->nullable();
             $table->string('status')->default('active');
             $table->string('tanggal_lahir')->nullable();
+            $table->integer('barcode_code');
             $table->string('gender');
             $table->integer('no_telp')->nullable();
             $table->foreignIdFor(Jurusan::class);
