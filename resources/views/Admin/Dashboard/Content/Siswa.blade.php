@@ -3,8 +3,8 @@
 @section('content')
 
 <!--Search-->
-<div class=" flex items-center">
-    <form method="GET" action="{{ route('search') }}" class="max-w-[480px] w-full">
+<div class="  flex items-center justify-center">
+    <form method="GET" action="{{ route('search') }}" class="max-w-[480px] w-full ">
         @csrf
         <div class="relative self-center item center ">
             <input type="text" name="search_term" class="w-full border h-12 shadow p-4 rounded-full" placeholder="search">
@@ -19,24 +19,19 @@
 </div>
 <!--Search End-->
 <!-- Card-->
-<div class="flex flex-wrap -mx-4">
-    @forelse($siswas as $siswa)
-    <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/6 p-4">
-        <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-            <div class="p-5">
-                <h5 class="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                    {{ $siswa->name }}</h5>
-                <hr class="w-full h-2 my-8 bg-black border-0 ">
-                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400"> Kelas : {{ $siswa->kelas->name }}
-                </p>
-                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400"> Jurusan : {{ $siswa->jurusan->name }}
-                </p>
-                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400"> Total Pelanggaran:
-                    {{ $siswa->kejadians->count() }}</p>
-                <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                    Lihat
-                </a>
-            </div>
+<div class="flex flex-wrap -mx-2 sm:-mx-2 md:-mx-4 mt-2">
+    @forelse($siswas as $s)
+    <div class="card w-full sm:w-1/2 md:w-1/2 lg:w-1/3 xl:w-1/4 bg-base-100 shadow-xl m-2 mt-2">
+        <figure><img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
+        <div class="card-body">
+          <h2 class="card-title font-bold text-2xl">{{ $s->name }}</h2>
+          <hr class="h-1  bg-gray-600 border-0 rounded dark:bg-gray-700">
+          <p> Jurusan: {{ $s->jurusan->name }}</p>
+          <p> Kelas: {{ $s->kelas->name }}</p>
+          <p> Total Pelanggaran: {{ $s->kejadians->count() }}</p>
+          <div class="card-actions justify-end">
+            <button class="btn btn-primary">Show</button>
+          </div>
         </div>
     </div>
     @empty
@@ -45,9 +40,10 @@
         <div>
           <h3 class="font-bold">No Siswa Fund</h3>
         </div>
-      </div>
+    </div>
     @endforelse
 </div>
+
  <!-- Card End-->
 
  <div class="mt-10">
