@@ -59,7 +59,7 @@ class WeaklyKejadianCharts
         ->setSubtitle('Data Pelanggaran')
         ->addData('Total', $chartData['Total'])
         ->setXAxis($xAxisLabels)
-        ->setWidth(500) // Set width as per your requirements
+        ->setWidth(400) // Set width as per your requirements
         ->setHeight(300);
 }
 

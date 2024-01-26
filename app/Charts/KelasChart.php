@@ -35,7 +35,7 @@ class KelasChart
             ->setSubtitle('Kelas')
             ->addData($chartData)
             ->setLabels(['Kelas 10' ,'Kelas 11' ,'Kelas 12'])
-            ->setWidth(400) // Set width as per your requirements
+            ->setWidth(300) // Set width as per your requirements
             ->setHeight(450);
     }
 }

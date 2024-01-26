@@ -60,9 +60,21 @@
 <!-- Add this script tag to include ECharts -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/4.0.2/echarts-en.min.js" charset="utf-8"></script>
 
-
+<!--Top Chart Start-->
+<div class="w-full  px-4 md:mt-0">
+    <div class="bg-white rounded-sm shadow-md">
+        <div class="p-4 mt-10">
+            <div id="app2">
+                {!! $charts3->container() !!}
+            </div>
+            <script src="{{ $charts3->cdn() }}"></script>
+            {!! $charts3->script() !!}
+        </div>
+    </div>
+</div>
+<!--Top Chart End-->
 <div class="mt-10">
-    <div class="flex justify-center">
+    <div class="flex flex-col md:flex-row justify-center">
         <div class="w-full md:w-1/2 px-4">
             <div class="bg-white rounded-sm shadow-md">
                 <div class="p-4">
@@ -74,7 +86,6 @@
                 </div>
             </div>
         </div>
-
         <div class="w-full md:w-1/2 px-4 mt-4 md:mt-0">
             <div class="bg-white rounded-sm shadow-md">
                 <div class="p-4">
@@ -88,6 +99,7 @@
         </div>
     </div>
 </div>
+
 
 
 

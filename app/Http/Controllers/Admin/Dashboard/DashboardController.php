@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin\Dashboard;
 
 use App\Charts\KelasChart;
+use App\Charts\TotalHarianChart;
 use App\Charts\WeaklyKejadianCharts;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -18,16 +19,17 @@ use App\Models\Kejadian;
 class DashboardController extends Controller
 {
 
-    public function AdminDashboard(WeaklyKejadianCharts $chart, KelasChart $kelasChart)
+    public function AdminDashboard(WeaklyKejadianCharts $chart, KelasChart $kelasChart , TotalHarianChart $totalHarianChart)
     {
         if (Auth::guard('admin')->check()) {
+            $charts3 = $totalHarianChart->build();
             $charts2 = $kelasChart->build();
             $charts = $chart->build();
             $siswas = Siswa::all();
             $jurusans = Jurusan::all();
             $kelass = Kelas::all();
 
-            return view('Admin.Dashboard.main.MainDashboard', compact('siswas', 'jurusans', 'kelass', 'charts', 'charts2'));
+            return view('Admin.Dashboard.main.MainDashboard', compact('siswas', 'jurusans', 'kelass', 'charts', 'charts2' ,'charts3'));
         }
     }
 
