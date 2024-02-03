@@ -6,8 +6,16 @@ use App\Models\Kejadian;
 use Illuminate\Contracts\View\View;
 use League\CommonMark\Extension\CommonMark\Node\Block\Heading;
 use Maatwebsite\Excel\Concerns\FromView;
-class TotalPelanggaranExport implements FromView
+use Maatwebsite\Excel\Concerns\WithHeadings;
+use Maatwebsite\Excel\Concerns\WithMapping;
+class TotalPelanggaranExport implements FromView ,WithHeadings
 {
+
+    /**
+     * Take From vie
+     *
+     * @return View
+     */
     public function view(): View
     {
 
@@ -15,9 +23,30 @@ class TotalPelanggaranExport implements FromView
             'total' => Kejadian::with(['siswa','pelanggaran','category' ])
         ]);
     }
-    public function heading()
+    /**
+     * Heading Exceel
+     *
+     * @return array
+     */
+    public function headings():array
     {
+        return [
+        'No',
+        'Nama Siswa',
+        'Nis',
+        'Gender',
+        'Kelas',
+        'Jurusan',
+        'Kelas'
 
+        ];
 
+    }
+    
+    public function mapping(): array
+    {
+        return [
+
+        ];
     }
 }

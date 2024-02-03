@@ -17,9 +17,8 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->integer('nis');
-            $table->string('password');
             $table->string('image')->nullable();
-            $table->string('status')->default('active');
+            $table->string('status')->default('active')->nullable();
             $table->string('tanggal_lahir')->nullable();
             $table->integer('barcode_code');
             $table->string('gender');

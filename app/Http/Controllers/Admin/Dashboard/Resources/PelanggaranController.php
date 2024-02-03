@@ -6,21 +6,24 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Pelanggaran;
 use App\Models\Category;
+use App\Models\Jurusan;
+use App\Models\Kelas;
+use App\Models\Siswa;
 class PelanggaranController extends Controller
 {
 
-    public function __construct(){
-        $this->middleware('IsAdmin');
-    }
+
     /**
      * Display a listing of the resource.
      */
     public function create()
     {
-
+        $siswas = Siswa::all();
+        $jurusans = Jurusan::all();
+        $kelass = Kelas::all();
         $categories= Category::all();
 
-        return view('Admin.components.Api.create',compact('categories'));
+        return view('Admin.components.Api.create',compact('categories' ,'siswas','jurusans','kelass'));
     }
 
 
@@ -52,7 +55,9 @@ class PelanggaranController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $siswas = Siswa::with(['kejadian' ,'kelas' ,'jurusan'])->findOrFail($id);
+
+        return view('');
     }
 
     /**

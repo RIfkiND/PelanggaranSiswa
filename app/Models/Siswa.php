@@ -14,7 +14,8 @@ class Siswa extends Authenticatable
     use HasApiTokens, HasFactory, Notifiable,HasRoles;
 
     protected $guard= 'siswa';
-
+    
+    protected $guarded = ['id'];
     /**
      * The attributes that are mass assignable.
      *
@@ -25,7 +26,6 @@ class Siswa extends Authenticatable
         'nis',
         'image',
         'gender',
-        'password',
         'no_telp',
         'tanggal_lahir',
         'image',

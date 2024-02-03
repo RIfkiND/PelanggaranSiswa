@@ -1,16 +1,25 @@
+<!-- siswa.blade.php -->
 <table>
     <thead>
-    <tr>
-        <th>Name</th>
-        <th>Email</th>
-    </tr>
+        <tr>
+            <th>Name</th>
+            <th>NIS</th>
+            <th>Kelas</th>
+            <th>Jurusan</th>
+            <th>Total Pelanggaran Score</th>
+            <!-- Add more columns if needed -->
+        </tr>
     </thead>
     <tbody>
-    @foreach($invoices as $invoice)
-        <tr>
-            <td>{{ $invoice->name }}</td>
-            <td>{{ $invoice->email }}</td>
-        </tr>
-    @endforeach
+        @foreach($siswas as $siswa)
+            <tr>
+                <td>{{ $siswa->name }}</td>
+                <td>{{ $siswa->nis }}</td>
+                <td>{{ $siswa->kelas->nama }}</td>
+                <td>{{ $siswa->jurusan->nama }}</td>
+                <td>{{ $siswa->total_pelanggaran_score }}</td>
+                
+            </tr>
+        @endforeach
     </tbody>
 </table>

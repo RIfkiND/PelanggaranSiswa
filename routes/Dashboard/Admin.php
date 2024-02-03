@@ -14,11 +14,13 @@ Route::controller(DashboardController::class)->prefix('/Admin/Dashboard')->group
 //Route::get('/Admin/Dashboard/list-pelanggaran',[DashboardController::class,'list'])->name('list.pelanggaran');
 
 
-Route::resource('/Admin/do',PelanggaranController::class)->names([
-    'create'=>'add.form',//get
-    'store'=>'store.pelaggaran',//post
-    'update'=> 'edit.pelanggaran',//put
-    'destroy'=>'delete.pelanggaran',//delete
+Route::resource('/Admin/do', PelanggaranController::class)->names([
+    'create' => 'add.form',      // GET
+    'store' => 'store.pelanggaran',    // POST
+    'edit' => 'edit.pelanggaran',      // GET
+    'update' => 'update.pelanggaran',  // PUT/PATCH
+    'destroy' => 'delete.pelanggaran', // DELETE
 ]);
 
 Route::get('/search/siswa',[SearchController::class,'search'])->name('search');
+Route::get('/search/pelanggaran',[SearchController::class,'search2'])->name('search.pelanggaran');
