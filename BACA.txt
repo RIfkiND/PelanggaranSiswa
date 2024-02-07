@@ -6,3 +6,4 @@ langkah-langkah:
 done 😙
 optional =
 "php artisan migrate"
+com
