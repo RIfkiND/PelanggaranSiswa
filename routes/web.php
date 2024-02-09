@@ -15,9 +15,11 @@ use Illuminate\Support\Facades\Route;
 
 
 
-
-require __DIR__.'/Auth/UserAuth.php';
-require __DIR__.'/Auth/AdminAuth.php';
-require __DIR__.'/Dashboard/Admin.php';
-require __DIR__.'/Export/ExportExcel.php';
-require __DIR__.'/Dashboard/Petguas.php';
+Route::get('/', function () {
+    return view('test');
+});
+require __DIR__ . '/Auth/UserAuth.php';
+require __DIR__ . '/Auth/AdminAuth.php';
+require __DIR__ . '/Dashboard/Admin.php';
+require __DIR__ . '/Export/ExportExcel.php';
+require __DIR__ . '/Dashboard/Petguas.php';
