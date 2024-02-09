@@ -2,8 +2,9 @@
       <div class="h-19">
         <i class="absolute top-0 right-0 p-4 opacity-50 cursor-pointer fas fa-times dark:text-white text-slate-400 xl:hidden" sidenav-close></i>
         <a class="block px-8 py-6 m-0 text-sm whitespace-nowrap dark:text-white text-slate-700" href="" target="_blank">
-          <img src="./assets/img/logo-smea-black.png" class="inline h-full max-w-full transition-all duration-200 dark:hidden ease-nav-brand max-h-8" alt="main_logo" />
-          <img src="./assets/img/logo-sema.png" class="hidden h-full max-w-full transition-all duration-200 dark:inline ease-nav-brand max-h-8" alt="main_logo" />
+          <img src="{{ asset('assets/img/logo-smea-black.png') }}" class="inline h-full max-w-full transition-all duration-200 dark:hidden ease-nav-brand max-h-8" alt="main_logo" />
+          <img src="{{ asset('assets/img/logo-sema.png') }}" class="hidden h-full max-w-full transition-all duration-200 dark:inline ease-nav-brand max-h-8" alt="main_logo" />
+          
           <span class="ml-1 font-semibold transition-all duration-200 ease-nav-brand">Admin Dasboard</span>
         </a>
       </div>
@@ -25,7 +26,7 @@
             <a class=" dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors" href="/build/pages/tables.html">
               <div class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
                 <!-- <i class="relative top-0 text-sm leading-normal text-orange-500 ni ni-calendar-grid-58"></i> -->
-                <img src="/build/assets/img/icons/icons8-student-24.png" alt="">
+                <img src="{{ asset('Assets/img/icons/icons8-test-account-24.png') }}" alt="">
               </div>
               <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">Siswa</span>
             </a>
@@ -35,7 +36,7 @@
             <a class=" dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors" href="/build/pages/tables.html">
               <div class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
                 <!-- <i class="relative top-0 text-sm leading-normal text-orange-500 ni ni-calendar-grid-58"></i> -->
-                <img src="/build/assets/img/icons/icons8-google-classroom-24.png" alt="">
+                <img src="{{ asset('Assets/img/icons/icons8-google-classroom-24.png') }}" alt="">
               </div>
               <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">Kelas</span>
             </a>
@@ -44,7 +45,7 @@
           <li class="mt-0.5 w-full">
             <a class=" dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors" href="/build/pages/billing.html">
               <div class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center fill-current stroke-0 text-center xl:p-2.5">
-                <img src="/build/assets/img/icons/icons8-notes-24.png" alt="">
+                <img src="{{ asset('Assets/img/icons/icons8-notes-24.png') }}" alt="">
               </div>
               <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">Jenis pelanggaran</span>
             </a>
@@ -53,7 +54,7 @@
           <li class="mt-0.5 w-full">
             <a class=" dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors" href="/build/pages/virtual-reality.html">
               <div class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
-                <img src="/build/assets/img/icons/icons8-police-fine-24.png" alt="">
+                <img src="{{ asset('Assets/img/icons/icons8-police-fine-24.png') }}" alt="">
               </div>
               <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">Pelanggaran</span>
             </a>
@@ -62,7 +63,7 @@
           <li class="mt-0.5 w-full">
             <a class=" dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors" href="/build/pages/rtl.html">
               <div class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
-                <img src="/build/assets/img/icons/icons8-case-study-24.png" alt="">
+                <img src="{{ asset('Assets/img/icons/icons8-case-study-24.png') }}" alt="">
               </div>
               <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">Data Pelanggaran Siswa</span>
             </a>
@@ -71,7 +72,7 @@
           <li class="mt-0.5 w-full">
             <a class=" dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors" href="/build/pages/rtl.html">
               <div class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
-                <img src="/build/assets/img/icons/icons8-analytics-24.png" alt="">
+                <img src="{{ asset('Assets/img/icons/icons8-analytics-24.png') }}" alt="">
               </div>
               <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">Laporan</span>
             </a>
@@ -84,7 +85,7 @@
           <li class="mt-0.5 w-full">
             <a class=" dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors" href="/build/pages/profile.html">
               <div class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
-                <img src="/build/assets/img/icons/icons8-test-account-24.png" alt="">
+                <img src="{{ asset('Assets/img/icons/icons8-test-account-24.png') }}" alt="">
               </div>
               <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">Profile</span>
             </a>
@@ -93,18 +94,9 @@
           <li class="mt-0.5 w-full">
             <a class=" dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors" href="/build/pages/sign-in.html">
               <div class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
-                <img src="/build/assets/img/icons/icons8-sign-in-24.png" alt="">
+                <img src="{{ asset('Assets/img/icons/icons8-sign-in-24.png') }}" alt="">
               </div>
               <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">Sign In</span>
-            </a>
-          </li>
-
-          <li class="mt-0.5 w-full">
-            <a class=" dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors" href="/build/pages/sign-up.html">
-              <div class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
-                <img src="/build/assets/img/icons/icons8-sign-up-24.png" alt="">
-              </div>
-              <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">Sign Up</span>
             </a>
           </li>
         </ul>

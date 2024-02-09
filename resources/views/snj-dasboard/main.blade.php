@@ -22,12 +22,13 @@
     <link rel="icon" type="image/png" href="./assets/img/smea-icon.png" />
     <title>Dasboard Admin - pelanggaran siswa smkn 1 ciamis</title>
     <!--     Fonts and icons     -->
-    @included('snj-dasboard.partial.link')
+    @vite('resources/css/app.css')
+    @include('snj-dasboard.partial.link')
   </head>
 
   <body class="m-0 font-sans text-base antialiased font-normal dark:bg-slate-900 leading-default bg-gray-50 text-slate-500">
     <div class="absolute w-full bg-blue-500 dark:hidden min-h-75"></div>
-    @included('snj-dasboard.partial.header')
+    @include('snj-dasboard.partial.header')
     <!-- sidenav  -->
     
 
@@ -37,10 +38,10 @@
      
       <!-- end cards -->
       @yield('content')
-      @included('snj-dasboard.partial.footer')
+      @include('snj-dasboard.partial.footer')
     </main>
     
   </body>
   <!-- plugin for charts  -->
-  @included('snj-dasboard.partial.script')
+  @include('snj-dasboard.partial.script')
 </html>
