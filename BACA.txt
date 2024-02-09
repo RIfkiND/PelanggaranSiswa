@@ -17,3 +17,4 @@ Sintaks CLI git
 - git branch -d <nama-branch>: Perintah ini digunakan untuk menghapus branch lokal yang telah selesai atau telah digabungkan ke branch lain. Jika branch tersebut memiliki pekerjaan yang belum selesai atau belum digabungkan, Git akan memberikan pesan kesalahan dan tidak akan menghapus branch tersebut.
 - git branch -D <nama-branch>: Perintah ini digunakan untuk menghapus branch secara paksa, tanpa memperhatikan apakah pekerjaan pada branch tersebut telah selesai atau belum. Ini akan menghapus branch bahkan jika ada pekerjaan yang belum digabungkan.
 - git merge <nama-branch>: Untuk menggabungkan 1 buah branch ke branch lain 
+- git pull origin main: untuk menarik semua perubahan
