@@ -46,7 +46,7 @@ class TotalPelanggaranExport implements FromView ,WithHeadings
     public function mapping(): array
     {
         return [
-
+            
         ];
     }
 }

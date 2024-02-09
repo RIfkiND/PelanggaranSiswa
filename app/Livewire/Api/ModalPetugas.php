@@ -35,7 +35,7 @@ class ModalPetugas extends Component
     
         public function update()
         {
-            // Update logic
+            
         }
     
         public function render()
