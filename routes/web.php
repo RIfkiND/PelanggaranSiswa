@@ -18,7 +18,7 @@ Route::get('/', function () {
     return view('login');
 });
 Route::get('/test', function () {
-    return view('Admin.Dashboard.pages.dashboard');
+    return view('Admin.Dashboard.pages.test');
 });
 
 require __DIR__ . '/Auth/UserAuth.php';
