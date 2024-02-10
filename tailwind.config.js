@@ -11,7 +11,7 @@ module.exports = {
                 // Add your custom colors here
             },
             fontFamily: {
-                body: [],
+                body: ['Poppins'],
                 // Add your custom font families here
             },
         },
