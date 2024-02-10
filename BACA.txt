@@ -6,3 +6,15 @@ langkah-langkah:
 done 😙
 optional =
 "php artisan migrate"
+
+Sintaks CLI git
+- git fetch: Perintah ini mengambil semua perubahan terbaru dari semua cabang remote yang terkait dengan repositori lokal
+- git fetch origin: sama seperti git fetch, namun cuman menyebutkan remote yang spesifik (dalam kasus ini, remote bernama 'origin')
+- git branch: untuk melihat cabang apa saja yang sudah ada
+- git branch: untuk memeriksa apakah ada cabang baru
+- git branch -b <nama-branch>: Untuk membuat branch baru
+- git branch -r: untuk melihat semua daftar branch
+- git branch -d <nama-branch>: Perintah ini digunakan untuk menghapus branch lokal yang telah selesai atau telah digabungkan ke branch lain. Jika branch tersebut memiliki pekerjaan yang belum selesai atau belum digabungkan, Git akan memberikan pesan kesalahan dan tidak akan menghapus branch tersebut.
+- git branch -D <nama-branch>: Perintah ini digunakan untuk menghapus branch secara paksa, tanpa memperhatikan apakah pekerjaan pada branch tersebut telah selesai atau belum. Ini akan menghapus branch bahkan jika ada pekerjaan yang belum digabungkan.
+- git merge <nama-branch>: Untuk menggabungkan 1 buah branch ke branch lain 
+- git pull origin main: untuk menarik semua perubahan

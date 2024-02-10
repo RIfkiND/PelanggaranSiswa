@@ -17,9 +17,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('login');
 });
+Route::get('/test', function () {
+    return view('Admin.Dashboard.pages.dashboard');
+});
 
-require __DIR__.'/Auth/UserAuth.php';
-require __DIR__.'/Auth/AdminAuth.php';
-require __DIR__.'/Dashboard/Admin.php';
-require __DIR__.'/Export/ExportExcel.php';
-require __DIR__.'/Dashboard/Petguas.php';
+require __DIR__ . '/Auth/UserAuth.php';
+require __DIR__ . '/Auth/AdminAuth.php';
+require __DIR__ . '/Dashboard/Admin.php';
+require __DIR__ . '/Export/ExportExcel.php';
+require __DIR__ . '/Dashboard/Petguas.php';
