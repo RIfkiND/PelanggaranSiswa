@@ -1,4 +1,4 @@
-@extends('snj-dasboard.main')
+@extends('Admin.Dashboard.main')
 @section('content')
 <div class="w-full px-6 py-6 mx-auto">
         <!-- row 1 -->
@@ -311,7 +311,7 @@
             </div>
           </div>
 
-          <div class="w-full max-w-full px-3 mt-0 mb-6 lg:w-6/12 lg:flex-none mt-8">
+          <div class="w-full max-w-full px-3  mb-6 lg:w-6/12 lg:flex-none mt-8">
             <div class="relative flex flex-col min-w-0 break-words bg-white border-0 border-solid shadow-xl dark:bg-slate-850 dark:shadow-dark-xl dark:bg-gray-950 border-black-125 rounded-2xl bg-clip-border">
               <div class="p-4 pb-0 mb-0 rounded-t-4">
                 <div class="flex justify-between">
