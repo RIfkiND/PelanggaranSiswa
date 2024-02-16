@@ -32,54 +32,38 @@
                         style="font-family: 'Poppins', sans-serif">
                         Login Admin
                     </h1>
-                    <form class="space-y-4 md:space-y-4" action="#">
+                    <form class="space-y-4 md:space-y-4" method="POST" action="{{ route('admin.auth') }}" enctype="multipart/form-data">
+                        @csrf
                         <div>
-                            <label for="email" class="block mb-2 text-sm font-medium text-gray-600 font-body">Your
-                                email</label>
-                            <input type="email" name="email" id="email" class="bg-gray-50 border border-gray-300
-                                text-gray-900 sm:text-sm rounded-lg
-                                focus:ring-gray-600 focus:border-gray-500 block
-                                font-body w-full p-2.5 outline-none
-                                placeholder=" name@company.com" required="" style="font-family: 'Poppins',sans-serif;">
+                            <label for="email" class="block mb-2 text-sm font-medium text-gray-600 font-body">Your email</label>
+                            <input type="email" name="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-gray-600 focus:border-gray-500 block font-body w-full p-2.5 outline-none placeholder=" name@company.com" required style="font-family: 'Poppins', sans-serif;">
                         </div>
+                        @if ($errors->has('email'))
+                            <span class="text-danger">{{ $errors->first('email') }}</span>
+                        @endif
                         <div>
-                            <label for="password" class="block mb-2 text-sm font-medium text-gray-900 font-body"
-                                style="font-family: 'Poppins', sans-serif">Password</label>
+                            <label for="password" class="block mb-2 text-sm font-medium text-gray-900 font-body" style="font-family: 'Poppins', sans-serif;">Password</label>
                             <div class="relative">
-                                <input type="password" name="password" id="password" placeholder="••••••••"
-                                    class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm font-body rounded-lg focus:ring-gray-600 focus:border-gray-500 block w-full p-2.5 outline-none"
-                                    required style="
-                                            font-family: 'Poppins', sans-serif;
-                                        " />
-                                <span onclick="togglePasswordVisibility()"
-                                    class="absolute inset-y-0 right-0 flex items-center pr-3 focus:outline-none">
+                                <input type="password" name="password" id="password" placeholder="••••••••" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm font-body rounded-lg focus:ring-gray-600 focus:border-gray-500 block w-full p-2.5 outline-none form-control" required style="font-family: 'Poppins', sans-serif;" />
+                                <span onclick="togglePasswordVisibility()" class="absolute inset-y-0 right-0 flex items-center pr-3 focus:outline-none">
                                     <i id="toggle-password-icon" class="fas fa-eye text-gray-500 cursor-pointer"></i>
                                 </span>
                             </div>
+                            @if ($errors->has('password'))
+                                <span class="text-danger">{{ $errors->first('password') }}</span>
+                            @endif
                         </div>
                         <div class="flex items-center justify-between">
                             <div class="flex items-start">
                                 <div class="flex items-center h-5">
-                                    <input id="remember" aria-describedby="remember" type="checkbox"
-                                        class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 dark:focus:ring-primary-600"
-                                        required="" style="
-                                                font-family: 'Poppins',
-                                                    sans-serif;
-                                            " />
+                                    <input id="remember" aria-describedby="remember" type="checkbox" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 dark:focus:ring-primary-600" required style="font-family: 'Poppins', sans-serif;" />
                                 </div>
                                 <div class="ml-3 text-sm">
-                                    <label for="remember" class="text-gray-500 font-body" style="
-                                                font-family: 'Poppins',
-                                                    sans-serif;
-                                            ">Remember me</label>
+                                    <label for="remember" class="text-gray-500 font-body" style="font-family: 'Poppins', sans-serif;">Remember me</label>
                                 </div>
                             </div>
                         </div>
-                        <button type="submit"
-                            class="w-full text-white bg-blue-400 hover:bg-blue-700 focus:ring-4 font-body focus:outline-none font-medium rounded-lg text-base px-5 py-2.5 text-center duration-300"
-                            style="font-family: 'Poppins', sans-serif">
-                            Login
-                        </button>
+                        <button type="submit" class="w-full text-white bg-blue-400 hover:bg-blue-700 focus:ring-4 font-body focus:outline-none font-medium rounded-lg text-base px-5 py-2.5 text-center duration-300" style="font-family: 'Poppins', sans-serif;">Login</button>
                     </form>
                 </div>
             </div>
