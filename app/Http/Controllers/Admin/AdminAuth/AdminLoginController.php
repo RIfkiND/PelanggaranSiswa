@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin\AdminAuth;
 
 use App\Http\Controllers\Controller;
+use App\Providers\RouteServiceProvider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 class AdminLoginController extends Controller
@@ -12,7 +13,7 @@ class AdminLoginController extends Controller
         $this->middleware('guest');
     }
     public function Adminloginview(){
-        return view('Admin.AdminAuth.login');
+        return view('Admin.Auth.Login');
 
     }
     public function adminlogin(Request $request)
@@ -25,7 +26,7 @@ class AdminLoginController extends Controller
         if (Auth::guard('admin')->attempt($credentials)) {
             $request->session()->regenerate();
 
-            return redirect()->route('AdminDashboard')->with('success', 'You have successfully logged in!');
+            return redirect(RouteServiceProvider::Admin_Dashboard)->with('success', 'You have successfully logged in!');
         }
 
         return back()->withErrors([

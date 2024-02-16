@@ -15,12 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::get('/', function () {
-    return view('Admin.Dashboard.Pages.test');
-});
-Route::get('/test', function () {
-    return view('Admin.Auth.Login');
-});
+
 require __DIR__ . '/Auth/UserAuth.php';
 require __DIR__ . '/Auth/AdminAuth.php';
 require __DIR__ . '/Dashboard/Admin.php';

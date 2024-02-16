@@ -24,7 +24,7 @@ class DashboardController extends Controller
             $jurusans = Jurusan::all();
             $kelass = Kelas::all();
 
-            return view('Admin.Dashboard.main.MainDashboard', compact('siswas', 'jurusans', 'kelass'));
+            return view('Admin.Dashboard.Pages.Dashboard', compact('siswas', 'jurusans', 'kelass'));
         }
     }
 
