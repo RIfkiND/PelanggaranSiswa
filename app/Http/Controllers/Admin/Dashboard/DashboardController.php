@@ -47,7 +47,7 @@ class DashboardController extends Controller
         $siswas = Siswa::all();
         $jurusans= Jurusan::all();
 
-        return view('Admin.Dashboard.Content.table' ,compact('siswas', 'jurusans', 'kelass'));
+        return view('Admin.Dashboard.Pages.laporan' ,compact('siswas', 'jurusans', 'kelass'));
     }
     /**
      * Tampilakn tiap siswa

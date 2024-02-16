@@ -30,17 +30,17 @@
     <div class="absolute w-full bg-blue-500 dark:hidden min-h-75"></div>
     @include('Admin.Dashboard.Components.header')
     <!-- sidenav  -->
-    
+
 
       <!-- end Navbar -->
 
       <!-- cards -->
-     
+
       <!-- end cards -->
       @yield('content')
       @include('Admin.Dashboard.Components.footer')
     </main>
-    
+
   </body>
   <!-- plugin for charts  -->
   @include('Admin.Dashboard.Components.script')

@@ -4,7 +4,7 @@
         <a class="block px-8 py-6 m-0 text-sm whitespace-nowrap dark:text-white text-slate-700" href="" target="_blank">
           <img src="{{ asset('assets/img/logo-smea-black.png') }}" class="inline h-full max-w-full transition-all duration-200 dark:hidden ease-nav-brand max-h-8" alt="main_logo" />
           <img src="{{ asset('assets/img/logo-sema.png') }}" class="hidden h-full max-w-full transition-all duration-200 dark:inline ease-nav-brand max-h-8" alt="main_logo" />
-          
+
           <span class="ml-1 font-semibold transition-all duration-200 ease-nav-brand">Admin Dasboard</span>
         </a>
       </div>
@@ -14,7 +14,7 @@
       <div class="items-center block w-auto max-h-screen  h-sidenav grow basis-full">
         <ul class="flex flex-col pl-0 mb-0">
           <li class="mt-0.5 w-full">
-            <a class="py-2.7 bg-blue-500/13 dark:text-white dark:opacity-80 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap rounded-lg px-4 font-semibold text-slate-700 transition-colors" href="/build/pages/dashboard.html">
+            <a class="py-2.7 bg-blue-500/13 dark:text-white dark:opacity-80 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap rounded-lg px-4 font-semibold text-slate-700 transition-colors" href="{{ route('AdminDashboard') }}">
               <div class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
                 <i class="relative top-0 text-sm leading-normal text-blue-500 ni ni-tv-2"></i>
               </div>
@@ -70,7 +70,7 @@
           </li>
 
           <li class="mt-0.5 w-full">
-            <a class=" dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors" href="/build/pages/rtl.html">
+            <a class=" dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors" href="{{ route('list.table') }}">
               <div class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
                 <img src="{{ asset('Assets/img/icons/icons8-analytics-24.png') }}" alt="">
               </div>
@@ -96,13 +96,13 @@
               <div class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
                 <img src="{{ asset('Assets/img/icons/icons8-sign-in-24.png') }}" alt="">
               </div>
-              <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">Sign In</span>
+              <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">Sign Out/span>
             </a>
           </li>
         </ul>
       </div>
 
-      
+
     </aside>
 
     <!-- end sidenav -->
@@ -119,7 +119,7 @@
               </li>
               <li class="text-sm pl-2 capitalize leading-normal text-white before:float-left before:pr-2 before:text-white before:content-['/']" aria-current="page">Dashboard</li>
             </ol>
-            
+
             <h6 class="mb-0 font-bold text-white capitalize">Dashboard</h6>
           </nav>
 
@@ -140,7 +140,7 @@
               <li class="flex items-center">
                 <a href="./pages/sign-in.html" class="block px-0 py-2 text-sm font-semibold text-white transition-all ease-nav-brand">
                   <i class="fa fa-user sm:mr-1"></i>
-                  <span class="hidden sm:inline">Sign In</span>
+                  <span class="hidden sm:inline">Sign Out</span>
                 </a>
               </li>
               <li class="flex items-center pl-4 xl:hidden">

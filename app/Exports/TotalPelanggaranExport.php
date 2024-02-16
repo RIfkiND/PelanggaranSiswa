@@ -18,7 +18,6 @@ class TotalPelanggaranExport implements FromView ,WithHeadings
      */
     public function view(): View
     {
-
         return view('Import.Exceel.TotalKejadianExcel',[
             'total' => Kejadian::with(['siswa','pelanggaran','category' ])
         ]);
@@ -42,11 +41,11 @@ class TotalPelanggaranExport implements FromView ,WithHeadings
         ];
 
     }
-    
+
     public function mapping(): array
     {
         return [
-            
+
         ];
     }
 }
