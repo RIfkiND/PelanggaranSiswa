@@ -16,12 +16,9 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', function () {
-    return view('test');
+    return view('laporan');
 });
 
-Route::get('/DataPelanggaran', function () {
-    return view('dataPelanggaran');
-});
 require __DIR__ . '/Auth/UserAuth.php';
 require __DIR__ . '/Auth/AdminAuth.php';
 require __DIR__ . '/Dashboard/Admin.php';

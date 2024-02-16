@@ -1,22 +1,37 @@
 @extends('snj-dasboard.main')
 @section('content')
-    <div class="px-6 py-4 sm:px-10 md:flex md:justify-between md:items-center text-slate-700 md:gap-2">
-        <div class="flex flex-col md:flex-row md:gap-4">
+    <link rel="stylesheet" href="{{ asset('Assets/CSS/pluss.css') }}">
+    <div class="px-6 py-4 sm:px-10 md:flex md:justify-between md:items-center text-slate-700 md:gap-2 flexings">
+        <div class="flex flexings md:gap-4 md:ps-10">
             <div class="mb-2 md:mb-0">
-                <div class="bg-white py-1 px-4 rounded-full">
+                <div class="bg-white py-1 px-4 rounded-md">
                     <span>Filter By Jurusan</span>
-                    <select name="" id="SJurusan" class="px-5 bg-transparent border-none appearance-none">
+                    <select name="" id="SJurusan" class="px-5 bg-transparent border-none appearance-none"
+                        onchange="HpusIcon()">
                         <option value="-" selected>-</option>
                         <option value="Akl 1">Akl 1</option>
                         <option value="Akl 2">Akl 2</option>
-                        <!-- More options -->
+                        <option value="Akl 3">Akl 3</option>
+                        <option value="Akl 4">Akl 4</option>
+                        <option value="MPLB 1">MPLB 1</option>
+                        <option value="MPLB 2">MPLB 2</option>
+                        <option value="MPLB 3">MPLB 3</option>
+                        <option value="MPLB 4">MPLB 4</option>
+                        <option value="PM 1">PM 1</option>
+                        <option value="PM 2">PM 2</option>
+                        <option value="PM 3">PM 3</option>
+                        <option value="HTL 1">HTL 1</option>
+                        <option value="HTL 2">HTL 2</option>
+                        <option value="DKV">DKV</option>
+                        <option value="PPLG">PPLG</option>
                     </select>
                 </div>
             </div>
             <div>
-                <div class="bg-white px-4 py-1 rounded-full">
+                <div class="bg-white px-4 py-1 rounded-md">
                     <span>Filter By Kelas</span>
-                    <select name="" id="SKelas" class="px-5 bg-transparent border-none pe-8 appearance-none">
+                    <select name="" id="SKelas" class="px-5 bg-transparent border-none pe-8 appearance-none"
+                        onchange="HpusIcon()">
                         <option value="-" selected>-</option>
                         <option value="X">X</option>
                         <option value="XI">XI</option>
@@ -28,14 +43,14 @@
         <div class="mt-4 md:mt-0">
             {{-- <div class="flex flex-col md:flex-row md:gap-4">
                 <div class="mb-2 md:mb-0">
-                    <div class="bg-white w-full md:w-80 py-1 flex items-center justify-center rounded-full">
+                    <div class="bg-white w-full md:w-80 py-1 flex items-center justify-center rounded-md">
                         <span>Birth Date From</span>
                         <input type="date" name="" id=""
                             class="border-transparent focus:outline-none bg-transparent">
                     </div>
                 </div>
                 <div>
-                    <div class="bg-white w-full md:w-80 py-1 flex items-center justify-center rounded-full">
+                    <div class="bg-white w-full md:w-80 py-1 flex items-center justify-center rounded-md">
                         <span>Birth Date To</span>
                         <input type="date" name="" id="" class="border-transparent focus:outline-none">
                     </div>
@@ -43,7 +58,7 @@
             </div> --}}
 
             <div class="flex flex-col gap-2">
-                <div class="bg-white w-80 flex items-center justify-center rounded-full">
+                <div class="bg-white w-80 flex items-center justify-center rounded-md">
                     <table>
                         <tr>
                             <td><span>Birth Date From</span></td>
@@ -52,7 +67,7 @@
                         </tr>
                     </table>
                 </div>
-                <div class="bg-white w-80 flex items-center justify-center rounded-full">
+                <div class="bg-white w-80 flex items-center justify-center rounded-md">
                     <table>
                         <tr>
                             <td class="w-28"><span>Birth Date To</span></td>
@@ -106,18 +121,29 @@
         </div>
     </div>
 
-    <div class="text-gray-600 mt-4 flex justify-end pe-9 pb-96">
-        <div class="p-2 bg-white flex flex-col justify-center items-center rounded-2xl shadow-lg shadow-slate-500 md:w-64">
-            <span class="font-semibold pb-2">Export To</span>
-            <div class="flex gap-5">
-                <div class="flex gap-2 btn-print cursor-pointer text-x items-center">
-                    <img src="{{ asset('Assets/img/shapes/pdf-svgrepo-com.svg') }}" alt="" width="25"
-                        id="pdf" />
-                    <label for="excel" class="">PDF</label>
-                </div>
+    <div class="flex justify-end pe-12 pt-10">
+        <div class="dropdown dropdown-top dropdown-end text-slate-600">
+            <div tabindex="0" role="button" class="btn m-1 bg-white gap-5">
+                <span>Export</span>
+                <img src=" {{ asset('Assets/img/icons/export.png') }} " alt="" class="w-5">
             </div>
+            <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
+                <li><a>
+                        <div class="flex gap-2 cursor-pointer text-x items-center">
+                            <img src="{{ asset('Assets/img/shapes/pdf-svgrepo-com.svg') }}" alt="" width="25"
+                                id="pdf" />
+                            <label for="excel" class="">PDF</label>
+                        </div>
+                    </a></li>
+                <li><a>
+                        <div class="flex gap-2 cursor-pointer text-x items-center">
+                            <img src="{{ asset('Assets/img/shapes/excel.svg') }}" alt="" width="25"
+                                id="pdf" />
+                            <label for="excel" class="">Excel</label>
+                        </div>
+                    </a></li>
+            </ul>
         </div>
-    </div>
     </div>
 
     <script>
