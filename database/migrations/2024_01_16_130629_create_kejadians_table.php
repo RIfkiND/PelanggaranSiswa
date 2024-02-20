@@ -18,6 +18,7 @@ return new class extends Migration
         Schema::create('kejadians', function (Blueprint $table) {
             $table->id();
             $table->string('alasan')->nullable();
+            $table->string('image')->nullable();
             $table->foreignIdFor(Siswa::class);
             $table->foreignIdFor(Pelanggaran::class);
             $table->foreignIdFor(Category::class);
