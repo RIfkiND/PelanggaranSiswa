@@ -13,8 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('Test',function(){
+Route::get('Test', function () {
     return view('Admin.Dashboard.Pages.laporan');
+});
+
+Route::get('/', function () {
+    return view('Admin.Dashboard.Pages.pelanggaran');
 });
 
 
