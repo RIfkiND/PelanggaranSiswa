@@ -16,6 +16,11 @@ class Kejadian extends Model
         'category_id'
     ];
 
+    protected $casts = [
+        'created_at' => 'datetime:Y-m-d H:i:s',
+        'updated_at' => 'datetime:Y-m-d H:i:s',
+    ];
+
     public function siswa(){
         return $this->belongsTo(Siswa::class);
     }

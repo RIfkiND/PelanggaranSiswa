@@ -21,17 +21,19 @@ class SiswaSeeder extends Seeder
       $jurusanId = Jurusan::first()->id;
       $kelasId = Kelas::first()->id;
 
-      Siswa::create([
-          'name' => 'roff',
-          'nis' => '123456',
-          'password'=> Hash::make('Test1234'),
-          'status' => 'active',
-          'gender'=>'laki-laki',
-          'tanggal_lahir' => '1990-01-01',
-          'no_telp' => 123456789,
-          'jurusan_id' => 1,
-          'kelas_id' => 4,
-      ]);
+        Siswa::create([
+            'name' => 'John Doe',
+            'nis' => 123456,
+            'image' => null,
+            'status' => 'active',
+            'tanggal_lahir' => '2000-01-01',
+            'barcode_code' => 987654,
+            'gender' => 'male',
+            'no_telp' => '123456789',
+            'jurusan_id' => $jurusanId, // Replace with the appropriate jurusan_id
+            'kelas_id' => $kelasId,   // Replace with the appropriate kelas_id
+        ]);
+
 
 
 

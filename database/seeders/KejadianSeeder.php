@@ -18,8 +18,8 @@ class KejadianSeeder extends Seeder
     public function run(): void
     {
         $categoryids = 1;
-        $pelanggaranid = 2;
-        $siswaids = 3;
+        $pelanggaranid = 1;
+        $siswaids = 1;
         $kejadians = [
             [
                 'siswa_id' => $siswaids,

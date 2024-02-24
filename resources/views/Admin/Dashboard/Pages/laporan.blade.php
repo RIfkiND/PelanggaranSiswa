@@ -9,21 +9,11 @@
                     <select name="" id="SJurusan" class="px-5 bg-transparent border-none appearance-none"
                         onchange="HpusIcon()">
                         <option value="-" selected>-</option>
-                        <option value="Akl 1">Akl 1</option>
-                        <option value="Akl 2">Akl 2</option>
-                        <option value="Akl 3">Akl 3</option>
-                        <option value="Akl 4">Akl 4</option>
-                        <option value="MPLB 1">MPLB 1</option>
-                        <option value="MPLB 2">MPLB 2</option>
-                        <option value="MPLB 3">MPLB 3</option>
-                        <option value="MPLB 4">MPLB 4</option>
-                        <option value="PM 1">PM 1</option>
-                        <option value="PM 2">PM 2</option>
-                        <option value="PM 3">PM 3</option>
-                        <option value="HTL 1">HTL 1</option>
-                        <option value="HTL 2">HTL 2</option>
-                        <option value="DKV">DKV</option>
-                        <option value="PPLG">PPLG</option>
+                       @forelse ($jurusans as  $j)
+                       <option value="{{ $j->id }}">{{ $j->name }}</option>
+                       @empty
+                       <option value="empty" disabled>empty</option>
+                       @endforelse
                     </select>
                 </div>
             </div>
@@ -33,8 +23,13 @@
                     <select name="" id="SKelas" class="px-5 bg-transparent border-none pe-8 appearance-none"
                         onchange="HpusIcon()">
                         <option value="-" selected>-</option>
-                        <option value="X">X</option>
-                        <option value="XI">XI</option>
+                        @forelse ($kelass as  $sa)
+                        <option value="{{ $sa->id }}">{{ $sa->kelas }}</option>
+
+                        @empty
+                        <option value="empty">Empty</option>
+                        @endforelse
+
                         <!-- More options -->
                     </select>
                 </div>
@@ -61,7 +56,7 @@
                 <div class="bg-white w-80 flex items-center justify-center rounded-md">
                     <table>
                         <tr>
-                            <td><span>Birth Date From</span></td>
+                            <td><span>History Date From</span></td>
                             <td><input type="date" name="" id=""
                                     class="border-transparent focus:outline-none bg-transparent"></td>
                         </tr>
@@ -70,7 +65,7 @@
                 <div class="bg-white w-80 flex items-center justify-center rounded-md">
                     <table>
                         <tr>
-                            <td class="w-28"><span>Birth Date To</span></td>
+                            <td class="w-28"><span>History Date To</span></td>
                             <td><input type="date" name="" id=""
                                     class="border-transparent focus:outline-none bg-transparent"></td>
                         </tr>
@@ -97,24 +92,29 @@
                         </tr>
                     </thead>
                     <tbody class="text-gray-600 bg-white divide-y divide-gray-200">
+                     @forelse ($siswas as $siswa)
+                        @foreach($siswa->kejadian as $kejadian)
+                            <tr class="hover:bg-gray-100">
+                                <td class="px-3 py-2">{{ $siswa->nis }}</td>
+                                <td class="px-3 py-2">{{ $siswa->name }}</td>
+                                <td class="px-3 py-2">{{ $siswa->kelas->kelas }}</td>
+                                <td class="px-3 py-2">{{ $siswa->kelas->name }}</td>
+                                <td class="px-3 py-2">{{ $kejadian->pelanggaran->name }}</td>
+                                <td class="px-3 py-2">{{ $siswa->kejadian->count() }}</td>
+                                <td class="px-3 py-2">{{ $kejadian->created_at }}</td>
+                            </tr>
+                        @endforeach
+                    @empty
                         <tr class="hover:bg-gray-100">
-                            <td class="px-3 py-2">07252743847</td>
-                            <td class="px-3 py-2">Ade Nova Wiguna</td>
-                            <td class="px-3 py-2">XI</td>
-                            <td class="px-3 py-2">PPLG</td>
-                            <td class="px-3 py-2">Terlambat</td>
-                            <td class="px-3 py-2">99</td>
-                            <td class="px-3 py-2">22/2/24</td>
+                            <td class="px-3 py-2">-</td>
+                            <td class="px-3 py-2">-</td>
+                            <td class="px-3 py-2">-</td>
+                            <td class="px-3 py-2">-</td>
+                            <td class="px-3 py-2">-</td>
+                            <td class="px-3 py-2">-</td>
+                            <td class="px-3 py-2">-</td>
                         </tr>
-                        <tr class="hover:bg-gray-100">
-                            <td class="px-3 py-2">07252743847</td>
-                            <td class="px-3 py-2">Ade Nova Wiguna</td>
-                            <td class="px-3 py-2">XI</td>
-                            <td class="px-3 py-2">PPLG</td>
-                            <td class="px-3 py-2"></td>
-                            <td class="px-3 py-2"></td>
-                            <td class="px-3 py-2"></td>
-                        </tr>
+                    @endforelse
                     </tbody>
                 </table>
             </div>
