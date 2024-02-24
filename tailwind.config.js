@@ -8,6 +8,10 @@ module.exports = {
     theme: {
         extend: {
             colors: {
+                laporan_bg: "#0EB29A",
+                laporan_txt: "#FDFDFD",
+                laporan_bg2: "#FFD24C",
+                laporan_bg3: "#D42B40"
                 // Add your custom colors here
             },
             fontFamily: {

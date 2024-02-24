@@ -8,3 +8,7 @@
         flex-direction: column;
     }
 }
+
+.shadow-nv-pelanggaran {
+    box-shadow: 2px 2px white;
+}
