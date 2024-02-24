@@ -1,4 +1,4 @@
-<script src="./assets/js/plugins/chartjs.min.js" async></script>
+<script src="{{ asset('Assets/JS/plugins/chartjs.min.js') }}" async></script>
 <!-- plugin for scrollbar  -->
 <script src="./assets/js/plugins/perfect-scrollbar.min.js" async></script>
 <!-- main script file  -->

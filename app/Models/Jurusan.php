@@ -18,10 +18,10 @@ class Jurusan extends Model
     protected $timestamp = false;
     
     public function kelas(){
-        $this->hasMany(Kelas::class);
+       return  $this->hasMany(Kelas::class);
     }
 
     public function siswa(){
-        $this->hasMany(Kelas::class);
+       return  $this->hasMany(Kelas::class);
     }
 }

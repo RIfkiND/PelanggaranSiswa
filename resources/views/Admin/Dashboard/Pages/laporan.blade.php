@@ -92,15 +92,15 @@
                         </tr>
                     </thead>
                     <tbody class="text-gray-600 bg-white divide-y divide-gray-200">
-                     @forelse ($siswas as $siswa)
+                        @forelse ($siswas as $siswa)
                         @foreach($siswa->kejadian as $kejadian)
                             <tr class="hover:bg-gray-100">
                                 <td class="px-3 py-2">{{ $siswa->nis }}</td>
                                 <td class="px-3 py-2">{{ $siswa->name }}</td>
-                                <td class="px-3 py-2">{{ $siswa->kelas->kelas }}</td>
-                                <td class="px-3 py-2">{{ $siswa->kelas->name }}</td>
-                                <td class="px-3 py-2">{{ $kejadian->pelanggaran->name }}</td>
-                                <td class="px-3 py-2">{{ $siswa->kejadian->count() }}</td>
+                                <td class="px-3 py-2">{{ optional($siswa->kelas)->kelas }}</td>
+                                <td class="px-3 py-2">{{ optional($siswa->kelas)->name }}</td>
+                                <td class="px-3 py-2">{{ optional($kejadian->pelanggaran)->name }}</td>
+                                <td class="px-3 py-2">{{ optional($siswa->kejadian)->count() }}</td>
                                 <td class="px-3 py-2">{{ $kejadian->created_at }}</td>
                             </tr>
                         @endforeach
@@ -115,7 +115,9 @@
                             <td class="px-3 py-2">-</td>
                         </tr>
                     @endforelse
+                    
                     </tbody>
+                    {{ $siswas->links() }}
                 </table>
             </div>
         </div>

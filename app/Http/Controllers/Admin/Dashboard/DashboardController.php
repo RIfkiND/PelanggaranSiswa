@@ -11,6 +11,8 @@ use App\Models\Kelas;
 use App\Models\Pelanggaran;
 use App\Models\Kejadian;
 use App\Models\Category;
+use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 class DashboardController extends Controller
 {
 
@@ -18,10 +20,19 @@ class DashboardController extends Controller
     {
         if (Auth::guard('admin')->check()) {
             $siswas = Siswa::all();
-            $jurusans = Jurusan::all();
-            $kelass = Kelas::all();
+            $jurusans = Jurusan::with(['siswa','kelas'])->get();
+            $kelass = Kelas::with(['siswa'])->get();
 
-            return view('Admin.Dashboard.Pages.Dashboard', compact('siswas', 'jurusans', 'kelass'));
+            $pelanggaranperbulan = Kejadian::select(
+                DB::raw("DATE_FORMAT(created_at, '%b') as month"),
+                DB::raw("COUNT(*) as total")
+            )
+            ->groupBy('month')
+            ->orderBy('created_at')
+            ->get();
+            $labels = $pelanggaranperbulan->pluck('month')->toArray();
+            $data = $pelanggaranperbulan->pluck('total')->toArray();
+            return view('Admin.Dashboard.Pages.Dashboard', compact('siswas', 'jurusans', 'kelass','labels', 'data'));
         }
     }
 
