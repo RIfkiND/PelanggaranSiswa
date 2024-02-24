@@ -13,11 +13,10 @@ use App\Http\Controllers\CheckController;
 |
 */
 
-
-
-Route::get('/', function () {
-    return view('Admin.Dashboard.Pages.Dashboard');
+Route::get('Test',function(){
+    return view('Admin.Dashboard.Pages.laporan');
 });
+
 
 require __DIR__ . '/Auth/UserAuth.php';
 require __DIR__ . '/Auth/AdminAuth.php';

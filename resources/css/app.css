@@ -1,4 +1,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-/* @vite('resources/css/app.css')*/
+
+@layer components {
+    .tables {
+        @apply rounded-2xl border p-10 shadow-slate-600 shadow-lg;
+    }
+    .td-head {
+        @apply font-semibold;
+    }
+
+    .dropdown-content {
+        @apply bg-white border px-3 py-1 hover:shadow-sm cursor-pointer hover:shadow-gray-600 hover:scale-100 transition-all ease-in-out duration-1000 hover:rounded-3xl;
+    }
+
+    .btn-print {
+        @apply hover:bg-blue-500 px-5 rounded-full py-1 hover:text-white transition-all duration-500 ease-in-out;
+    }
+}

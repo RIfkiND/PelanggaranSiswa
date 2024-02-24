@@ -20,9 +20,7 @@ class IsAdmin
         if(Auth::guard('admin')->check()){
             return $next($request);
         }
-        else if(Auth::guard('siswa')->check()){
-            abort(403);
-        }
+       
         abort(403);
     }
 }

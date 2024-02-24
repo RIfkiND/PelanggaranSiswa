@@ -14,9 +14,9 @@ class AdminLoginController extends Controller
     {
         $this->middleware('guest');
     }
-    public function Adminloginview()
-    {
+    public function Adminloginview(){
         return view('Admin.Auth.Login');
+
     }
     public function adminlogin(Request $request)
     {
@@ -28,9 +28,8 @@ class AdminLoginController extends Controller
 
         if (Auth::guard('admin')->attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect(RouteServiceProvider::Admin_Dashboard)->with('success', 'You have successfully logged in!');
 
-            
+            return redirect(RouteServiceProvider::Admin_Dashboard)->with('success', 'You have successfully logged in!');
         }
 
         return back()->withErrors([
