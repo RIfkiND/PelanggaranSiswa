@@ -44,7 +44,7 @@ class DashboardController extends Controller
 
     public function table(){
         $kelass= Kelas::all();
-        $siswas = Siswa::all();
+        $siswas = Siswa::with(['kelas' ,'jurusan','kejadian'])->paginate(15);
         $jurusans= Jurusan::all();
 
         return view('Admin.Dashboard.Pages.laporan' ,compact('siswas', 'jurusans', 'kelass'));

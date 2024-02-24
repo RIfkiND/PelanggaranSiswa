@@ -14,7 +14,7 @@ class Siswa extends Authenticatable
     use HasApiTokens, HasFactory, Notifiable,HasRoles;
 
     protected $guard= 'siswa';
-    
+
     protected $guarded = ['id'];
     /**
      * The attributes that are mass assignable.
@@ -65,7 +65,7 @@ class Siswa extends Authenticatable
             ->sum('pelanggarans.pelanggaran_score');
     }
 
-    public function kejadians()
+    public function kejadian()
     {
         return $this->hasMany(Kejadian::class);
     }
