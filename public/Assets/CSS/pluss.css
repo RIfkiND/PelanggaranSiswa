@@ -7,6 +7,20 @@
     .flexings {
         flex-direction: column;
     }
+    .responsif-nv-pelanggaran {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .responsif-nv-pelanggaran > div {
+        margin: 0 auto;
+    }
+
+    .heading-nv-responsif {
+        padding: 0px 20%;
+    }
 }
 
 .shadow-nv-pelanggaran {

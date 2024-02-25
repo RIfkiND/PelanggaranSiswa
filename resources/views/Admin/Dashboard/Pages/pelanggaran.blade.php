@@ -6,9 +6,10 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
         <link rel="stylesheet" href="{{ asset('Assets/CSS/pluss.css') }}">
         <div class="flex justify-center my-10">
-            <span class="text-slate-600 font-semibold text-xl py-1 px-48 shadow-md rounded-md bg-white">Pelanggaran</span>
+            <span
+                class="text-slate-600 font-semibold text-xl py-1 px-48 heading-nv-responsif shadow-md rounded-md bg-white">Pelanggaran</span>
         </div>
-        <div class="text-center flex justify-around flex-row pt-4">
+        <div class="text-center flex justify-around flex-row pt-4 responsif-nv-pelanggaran">
             <div class="text-white bg-laporan_bg w-56 p-5 flex-col rounded-xl shadow-nv-pelanggaran">
                 <div class="flex flex-col">
                     <span class="font-semibold text-xl border-b pb-2 border-white">Ringan</span>
@@ -94,7 +95,17 @@
                                 <td class="px-3 py-2">Terlambat</td>
                                 <td class="px-3 py-2">20</td>
                                 <td class="px-3 py-2">Ringan</td>
-                                <td class="px-3 py-2">-</td>
+                                <td class="px-3 py-2">
+                                    <div class="flex justify-evenly">
+                                        <button>
+                                            <img src="{{ asset('Assets/img/edit.png') }}" alt="" class="w-6">
+                                        </button>
+                                        <button>
+                                            <img src="{{ asset('Assets/img/remove.png') }}" alt="" class="w-6">
+                                        </button>
+
+                                    </div>
+                                </td>
                             </tr>
                             <tr class="hover:bg-gray-100">
                                 <td class="px-3 py-2">01</td>
