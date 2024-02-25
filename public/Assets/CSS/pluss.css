@@ -12,3 +12,8 @@
 .shadow-nv-pelanggaran {
     box-shadow: 2px 2px white;
 }
+
+.input:focus {
+    border-color: green; /* Mengubah warna border menjadi hijau saat input memiliki fokus */
+    outline: none; /* Menghapus outline default saat input memiliki fokus */
+}
