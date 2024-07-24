@@ -16,25 +16,25 @@ use Carbon\Carbon;
 class DashboardController extends Controller
 {
 
-    public function AdminDashboard()
-    {
-        if (Auth::guard('admin')->check()) {
-            $siswas = Siswa::all();
-            $jurusans = Jurusan::with(['siswa','kelas'])->get();
-            $kelass = Kelas::with(['siswa'])->get();
+    // public function AdminDashboard()
+    // {
+    //     if (Auth::guard('admin')->check()) {
+    //         $siswas = Siswa::all();
+    //         $jurusans = Jurusan::with(['siswa','kelas'])->get();
+    //         $kelass = Kelas::with(['siswa'])->get();
 
-            $pelanggaranperbulan = Kejadian::select(
-                DB::raw("DATE_FORMAT(created_at, '%b') as month"),
-                DB::raw("COUNT(*) as total")
-            )
-            ->groupBy('month')
-            ->orderBy('created_at')
-            ->get();
-            $labels = $pelanggaranperbulan->pluck('month')->toArray();
-            $data = $pelanggaranperbulan->pluck('total')->toArray();
-            return view('Admin.Dashboard.Pages.Dashboard', compact('siswas', 'jurusans', 'kelass','labels', 'data'));
-        }
-    }
+    //         $pelanggaranperbulan = Kejadian::select(
+    //             DB::raw("DATE_FORMAT(created_at, '%b') as month"),
+    //             DB::raw("COUNT(*) as total")
+    //         )
+    //         ->groupBy('month')
+    //         ->orderBy('created_at')
+    //         ->get();
+    //         $labels = $pelanggaranperbulan->pluck('month')->toArray();
+    //         $data = $pelanggaranperbulan->pluck('total')->toArray();
+    //         return view('Admin.Dashboard.Pages.Dashboard', compact('siswas', 'jurusans', 'kelass','labels', 'data'));
+    //     }
+    // }
 
     /**
      *  Tampilakn tiap pelanggaran

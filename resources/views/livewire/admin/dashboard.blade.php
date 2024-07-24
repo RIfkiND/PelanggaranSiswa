@@ -1,5 +1,4 @@
-@extends('Admin.Dashboard.main')
-@section('content')
+
 <div class="w-full px-6 py-6 mx-auto">
     <!-- row 1 -->
     <div class="flex flex-wrap -mx-3">
@@ -52,7 +51,12 @@
                         <div class="flex-none w-2/3 max-w-full px-3">
                             <div>
                                 <p class="mb-0 font-sans text-sm font-semibold leading-normal uppercase dark:text-white dark:opacity-60">Analisis per hari</p>
+                                @if($totalsiswa == 0)
+                                <h5 class="mb-2 font-bold dark:text-white">Total 0 Siswa</h5>
+                                @else
                                 <h5 class="mb-2 font-bold dark:text-white">Total {{ $totalsiswa }} Siswa</h5>
+                                @endif
+
                                 <p class="mb-0 dark:text-white dark:opacity-60">
                                     @if(isset($percentages[$day]))
                                     @if($percentages[$day] > 0)
@@ -294,7 +298,7 @@
             </div>
         </div>
 
-        <div class="w-full max-w-full px-3  mb-6 lg:w-6/12 lg:flex-none mt-8">
+        <div class="w-full max-w-full px-3 mt-8 mb-6 lg:w-6/12 lg:flex-none">
             <div class="relative flex flex-col min-w-0 break-words bg-white border-0 border-solid shadow-xl dark:bg-slate-850 dark:shadow-dark-xl dark:bg-gray-950 border-black-125 rounded-2xl bg-clip-border">
                 <div class="p-4 pb-0 mb-0 rounded-t-4">
                     <div class="flex justify-between">
@@ -496,4 +500,4 @@
         </div>
     </footer>
 </div>
-@endsection
+

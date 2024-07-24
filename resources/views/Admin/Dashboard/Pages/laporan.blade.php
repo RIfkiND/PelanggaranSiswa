@@ -115,7 +115,7 @@
                             <td class="px-3 py-2">-</td>
                         </tr>
                     @endforelse
-                    
+
                     </tbody>
                     {{ $siswas->links() }}
                 </table>
@@ -157,4 +157,3 @@
             iconK.classList.add('bg-none')
         }
     </script>
-@endsection
