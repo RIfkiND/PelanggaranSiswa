@@ -14,20 +14,20 @@ class Dashboard extends Component
 {
     public function render()
     {
+        $siswas = Siswa::all();
+        $jurusans = Jurusan::with(['siswa', 'kelas'])->get();
+        $kelass = Kelas::with(['siswa'])->get();
 
-            $siswas = Siswa::all();
-            $jurusans = Jurusan::with(['siswa','kelas'])->get();
-            $kelass = Kelas::with(['siswa'])->get();
-
-            $pelanggaranperbulan = Kejadian::select(
-                DB::raw("DATE_FORMAT(created_at, '%b') as month"),
-                DB::raw("COUNT(*) as total")
-            )
-            ->groupBy('month')
-            ->orderBy('created_at')
+        
+        $pelanggaranperbulan = Kejadian::selectRaw("MONTHNAME(created_at) as month, COUNT(*) as total")
+            ->groupByRaw("MONTHNAME(created_at)")
+            ->orderByRaw("MIN(created_at)")
             ->get();
-            $labels = $pelanggaranperbulan->pluck('month')->toArray();
-            $data = $pelanggaranperbulan->pluck('total')->toArray();
-        return view('livewire.admin.dashboard', compact('siswas', 'jurusans', 'kelass','labels', 'data'));
+
+        $labels = $pelanggaranperbulan->pluck('month')->toArray();
+        $data = $pelanggaranperbulan->pluck('total')->toArray();
+
+        return view('livewire.admin.dashboard', compact('siswas', 'jurusans', 'kelass', 'labels', 'data'));
     }
+
 }
